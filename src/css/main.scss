@@ -1,0 +1,242 @@
+@import './color.scss';
+@import './variable';
+
+a {
+    text-decoration: none;
+    color: $color-white;
+}
+
+h2 {
+    font-size: 30px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 900;
+}
+
+h3 {
+    margin-bottom: 24px;
+
+    font-size: 22px;
+    font-weight: 700;
+    color: $color-black-10;
+}
+
+body {
+    background-color: $color-blue100;
+    line-height: 1.4;
+    font-family: 'Roboto', sans-serif;
+}
+
+.wrap {
+    margin: 30px;
+
+    border-radius: 30px;
+
+    background-color: $color-area;
+}
+
+#root > div {
+    display: flex;
+    flex-direction: row;
+}
+
+router-view {
+    width: 65%;
+}
+
+/* 버튼 */
+.btn {
+    height: 40px;
+    padding: 0 20px;
+    border: none;
+    border-radius: 4px;
+    outline: none;
+    font-size: 14px;
+    font-weight: 700;
+    color: $color-white;
+    background-color: $color-grey900;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background-color: $color-blue900;
+}
+
+.btn-primary {
+    background-color: $color-primary;
+    color: $color-black-10;
+}
+
+.btn-primary:hover {
+    background-color: $color-hover;
+    color: $color-white;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+
+    width: 6%;
+
+    border-radius: 20px 0px 0px 20px;
+    background-color: $color-grey900;
+
+    .logo {
+        margin: 40px 0;
+    }
+
+    nav {
+        width: 50%;
+        ul {
+            color: $color-white;
+
+            li {
+                display: flex;
+                justify-content: center;
+
+                margin-bottom: 32px;
+                padding: 4px;
+
+                opacity: 0.3;
+            }
+
+            li:hover {
+                border-radius: 8px;
+                background-color: $color-darkThemeBlue50;
+                opacity: 1;
+            }
+        }
+    }
+}
+
+// home css
+.Home-Container {
+    display: flex;
+    flex-direction: column;
+
+    max-width: $breackpoint-laptop;
+    padding: 40px;
+    gap: 24px;
+
+    border-radius: 16px 0px 0px 16px;
+
+    background-color: $color-grey200;
+
+    .search {
+        display: flex;
+        justify-content: space-between;
+
+        .input-box {
+            display: flex;
+            gap: 12px;
+
+            input {
+                width: 180px;
+                padding: 6px;
+
+                background-color: $color-white;
+                border-radius: 4px;
+                border: none;
+                color: $color-grey600;
+            }
+        }
+    }
+
+    .main-banner {
+        display: flex;
+        flex-direction: column;
+
+        padding: 32px;
+        border-radius: 20px;
+
+        background-color: $color-white;
+        background-image: url(../img/banner2.webp);
+        background-position: left;
+        background-repeat: no-repeat;
+        background-size: auto;
+
+        .contents {
+            line-height: 1.6;
+            span {
+                color: $color-white;
+            }
+            p {
+                font-size: 20px;
+            }
+        }
+    }
+}
+
+// report
+.report {
+    display: flex;
+    flex-direction: column;
+    color: $color-white;
+
+    // 아이콘 크기
+    .material-symbols-outlined {
+        font-size: 30px;
+        color: $color-white;
+    }
+
+    .report-contents {
+        display: flex;
+        gap: 26px;
+
+        &__item-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            gap: 12px;
+            width: 140px;
+            border-radius: 16px;
+            padding: 20px 28px;
+            box-sizing: border-box;
+
+            background-color: $color-white;
+            color: $color-black;
+
+            .icon {
+                padding: 8px;
+
+                border-radius: 12px;
+                background-color: $color-blue800;
+            }
+
+            .icon:hover {
+                background-color: $color-grey900;
+                cursor: pointer;
+                transition: 0.3s;
+            }
+            .value {
+                font-size: 24px;
+                font-weight: 700;
+            }
+        }
+
+        // 추가박스
+        .add {
+            justify-content: center;
+            border: 1px dotted $color-area;
+            border-width: 5px; /* 위, 아래, 좌, 우 간격을 조절하여 점선 간격을 크게 설정 */
+
+            opacity: 0.8;
+            transition: 0.3s;
+
+            .icon {
+                background-color: $color-white;
+
+                .material-symbols-outlined {
+                    color: $color-black-10;
+                }
+            }
+        }
+
+        .add:hover {
+            opacity: 1;
+        }
+    }
+}
