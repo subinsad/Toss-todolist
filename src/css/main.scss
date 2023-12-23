@@ -72,6 +72,18 @@ router-view {
     color: $color-white;
 }
 
+//점
+.dot {
+    display: block;
+    content: '';
+
+    width: 15px;
+    height: 15px;
+
+    border-radius: 50%;
+    border: 5px solid $color-white;
+}
+
 header {
     display: flex;
     flex-direction: column;
@@ -116,7 +128,7 @@ header {
     display: flex;
     flex-direction: column;
 
-    max-width: $breackpoint-laptop;
+    //max-width: $breackpoint-laptop;
     padding: 40px;
     gap: 24px;
 
@@ -246,24 +258,88 @@ section {
     display: flex;
     flex-direction: column;
     align-items: center;
+    box-sizing: border-box;
 
     width: 29%;
+    padding: 40px;
+    gap: 36px;
 
     border-radius: 0px 16px 16px 0px;
     background-color: $color-white;
+
+    // 프로필
+    article {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+
+        gap: 13%;
+        width: 100%;
+
+        .name-box {
+            display: flex;
+            flex-direction: row;
+
+            gap: 12px;
+
+            text-align: right;
+            font-family: 'Oswald', sans-serif;
+            font-weight: 900;
+
+            &__textBox {
+                display: flex;
+                flex-direction: column;
+                .name {
+                    text-transform: uppercase;
+                    font-size: 22px;
+                }
+
+                .email {
+                    font-size: 14px;
+                    color: $color-grey800;
+                }
+            }
+        }
+
+        .icon-box {
+            display: flex;
+            gap: 20px;
+
+            .material-symbols-outlined {
+                font-size: 30px;
+                color: $color-primary;
+            }
+        }
+
+        .profile {
+            border-radius: 50%;
+        }
+
+        .dot {
+            position: absolute;
+            right: -4px;
+            top: 43px;
+
+            background-color: greenyellow;
+        }
+    }
 
     .calendar {
         display: flex;
         flex-direction: column;
         align-items: center;
 
-        width: 80%;
+        width: 100%;
+
+        h3 {
+            margin: 0;
+        }
 
         //달력
         .header {
             display: flex;
             flex-direction: column;
-            align-items: center;
 
             gap: 20px;
 
@@ -272,13 +348,21 @@ section {
             font-family: 'Oswald', sans-serif;
             font-weight: 900;
 
+            &-title {
+                display: flex;
+                gap: 0%;
+                justify-content: space-between;
+            }
+
             &__month {
                 font-size: 20px;
             }
             &__week {
                 display: flex;
-                gap: 15%;
+                gap: 8%;
                 justify-content: center;
+
+                font-size: 16px;
             }
         }
 

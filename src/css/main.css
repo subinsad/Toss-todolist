@@ -67,6 +67,15 @@ router-view {
   color: #fff;
 }
 
+.dot {
+  display: block;
+  content: "";
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: 5px solid #fff;
+}
+
 header {
   display: flex;
   flex-direction: column;
@@ -101,7 +110,6 @@ header nav ul li:hover {
 .Home-Container {
   display: flex;
   flex-direction: column;
-  max-width: 1120px;
   padding: 40px;
   gap: 24px;
   border-radius: 16px 0px 0px 16px;
@@ -204,33 +212,89 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
+  box-sizing: border-box;
   width: 29%;
+  padding: 40px;
+  gap: 36px;
   border-radius: 0px 16px 16px 0px;
   background-color: #fff;
+}
+section article {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  gap: 13%;
+  width: 100%;
+}
+section article .name-box {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  text-align: right;
+  font-family: "Oswald", sans-serif;
+  font-weight: 900;
+}
+section article .name-box__textBox {
+  display: flex;
+  flex-direction: column;
+}
+section article .name-box__textBox .name {
+  text-transform: uppercase;
+  font-size: 22px;
+}
+section article .name-box__textBox .email {
+  font-size: 14px;
+  color: #333d4b;
+}
+section article .icon-box {
+  display: flex;
+  gap: 20px;
+}
+section article .icon-box .material-symbols-outlined {
+  font-size: 30px;
+  color: #fdc000;
+}
+section article .profile {
+  border-radius: 50%;
+}
+section article .dot {
+  position: absolute;
+  right: -4px;
+  top: 43px;
+  background-color: greenyellow;
 }
 section .calendar {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 80%;
+  width: 100%;
+}
+section .calendar h3 {
+  margin: 0;
 }
 section .calendar .header {
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: 20px;
   color: #202c4d;
   font-size: 17px;
   font-family: "Oswald", sans-serif;
   font-weight: 900;
 }
+section .calendar .header-title {
+  display: flex;
+  gap: 0%;
+  justify-content: space-between;
+}
 section .calendar .header__month {
   font-size: 20px;
 }
 section .calendar .header__week {
   display: flex;
-  gap: 15%;
+  gap: 8%;
   justify-content: center;
+  font-size: 16px;
 }
 section .calendar .days {
   display: flex;

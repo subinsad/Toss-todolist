@@ -10,6 +10,7 @@ export default class Calendar extends Component {
     }
 
     render() {
+        //달력
         const currentDate = new Date();
         const currentYear = currentDate.getFullYear();
         const currentMonth = currentDate.getMonth(); // 월은 0부터 시작하므로 +1을 제거
@@ -27,8 +28,14 @@ export default class Calendar extends Component {
 
         // 현재 달의 날짜를 출력
         let calendarHTML = `
+            
             <div class="header">
+                <div class="header-title"> 
+                <h3> Schedule Calendar </h3>
                 <span class="header__month">${currentMonth + 1}월</span>
+                </div>
+            
+
                 <div class="header__week"> 
                 ${dayNames
                     .map(
