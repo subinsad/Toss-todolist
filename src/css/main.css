@@ -198,4 +198,66 @@ header nav ul li:hover {
 }
 .report .report-contents .add:hover {
   opacity: 1;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 29%;
+  border-radius: 0px 16px 16px 0px;
+  background-color: #fff;
+}
+section .calendar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+}
+section .calendar .header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  color: #202c4d;
+  font-size: 17px;
+  font-family: "Oswald", sans-serif;
+  font-weight: 900;
+}
+section .calendar .header__month {
+  font-size: 20px;
+}
+section .calendar .header__week {
+  display: flex;
+  gap: 15%;
+  justify-content: center;
+}
+section .calendar .days {
+  display: flex;
+  justify-content: space-between;
+  font-size: 15px;
+}
+section .calendar .days span {
+  padding: 12px;
+  transition: 0.5s;
+}
+section .calendar .days .empty:hover {
+  background-color: #fff;
+}
+section .calendar .days span:hover {
+  border-radius: 12px;
+  background-color: #fdc000;
+  color: #fff;
+  cursor: pointer;
+}
+section .calendar .active {
+  border-radius: 12px;
+  background-color: #202c4d;
+  color: #fff;
+}
+section .calendar > div {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
 }/*# sourceMappingURL=main.css.map */

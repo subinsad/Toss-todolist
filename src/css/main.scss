@@ -240,3 +240,86 @@ header {
         }
     }
 }
+
+// mypage
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 29%;
+
+    border-radius: 0px 16px 16px 0px;
+    background-color: $color-white;
+
+    .calendar {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        width: 80%;
+
+        //달력
+        .header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            gap: 20px;
+
+            color: $color-darkThemeBlue50;
+            font-size: 17px;
+            font-family: 'Oswald', sans-serif;
+            font-weight: 900;
+
+            &__month {
+                font-size: 20px;
+            }
+            &__week {
+                display: flex;
+                gap: 15%;
+                justify-content: center;
+            }
+        }
+
+        .days {
+            display: flex;
+            justify-content: space-between;
+
+            font-size: 15px;
+
+            span {
+                padding: 12px;
+
+                transition: 0.5s;
+            }
+
+            .empty:hover {
+                background-color: $color-white;
+            }
+
+            span:hover {
+                border-radius: 12px;
+
+                background-color: $color-primary;
+                color: $color-white;
+                cursor: pointer;
+            }
+        }
+
+        .active {
+            border-radius: 12px;
+
+            background-color: $color-darkThemeBlue50;
+            color: $color-white;
+        }
+    }
+
+    .calendar > div {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+
+        width: 100%;
+    }
+}

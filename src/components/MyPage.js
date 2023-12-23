@@ -17,7 +17,10 @@ export default class MyPage extends Component {
 
         this.el.innerHTML = /* html */ `
         ${profileEl.outerHTML}
-        ${calendarEl.outerHTML}
+        <div class="calendar"> 
+            ${calendarEl.outerHTML}
+        </div>
+
         `;
     }
 }
