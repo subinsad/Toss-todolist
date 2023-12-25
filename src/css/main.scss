@@ -17,6 +17,7 @@ h3 {
 
     font-size: 22px;
     font-weight: 700;
+    font-family: 'Oswald', sans-serif;
     color: $color-black-10;
 }
 
@@ -70,6 +71,22 @@ router-view {
 .btn-primary:hover {
     background-color: $color-hover;
     color: $color-white;
+}
+
+// input 영역
+.input-box {
+    display: flex;
+    gap: 12px;
+
+    input {
+        width: 180px;
+        padding: 6px;
+
+        background-color: $color-white;
+        border-radius: 4px;
+        border: none;
+        color: $color-grey600;
+    }
 }
 
 //점
@@ -139,21 +156,6 @@ header {
     .search {
         display: flex;
         justify-content: space-between;
-
-        .input-box {
-            display: flex;
-            gap: 12px;
-
-            input {
-                width: 180px;
-                padding: 6px;
-
-                background-color: $color-white;
-                border-radius: 4px;
-                border: none;
-                color: $color-grey600;
-            }
-        }
     }
 
     .main-banner {
@@ -178,6 +180,12 @@ header {
                 font-size: 20px;
             }
         }
+    }
+
+    // todolist
+    .Todolist {
+        display: flex;
+        flex-direction: column;
     }
 }
 
