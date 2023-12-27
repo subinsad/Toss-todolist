@@ -1,0 +1,36 @@
+.Home-Container {
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+  gap: 24px;
+  border-radius: 16px 0px 0px 16px;
+  background-color: #e5e8eb;
+}
+.Home-Container .search {
+  display: flex;
+  justify-content: space-between;
+}
+.Home-Container .main-banner {
+  display: flex;
+  flex-direction: column;
+  padding: 32px;
+  border-radius: 20px;
+  background-color: #fff;
+  background-image: url(../img/banner2.webp);
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: auto;
+}
+.Home-Container .main-banner .contents {
+  line-height: 1.6;
+}
+.Home-Container .main-banner .contents span {
+  color: #fff;
+}
+.Home-Container .main-banner .contents p {
+  font-size: 20px;
+}
+.Home-Container .Todolist {
+  display: flex;
+  flex-direction: column;
+}/*# sourceMappingURL=Home.css.map */

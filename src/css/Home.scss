@@ -1,0 +1,51 @@
+@import './color.scss';
+@import './variable';
+
+// home css
+.Home-Container {
+    display: flex;
+    flex-direction: column;
+
+    //max-width: $breackpoint-laptop;
+    padding: 40px;
+    gap: 24px;
+
+    border-radius: 16px 0px 0px 16px;
+
+    background-color: $color-grey200;
+
+    .search {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .main-banner {
+        display: flex;
+        flex-direction: column;
+
+        padding: 32px;
+        border-radius: 20px;
+
+        background-color: $color-white;
+        background-image: url(../img/banner2.webp);
+        background-position: left;
+        background-repeat: no-repeat;
+        background-size: auto;
+
+        .contents {
+            line-height: 1.6;
+            span {
+                color: $color-white;
+            }
+            p {
+                font-size: 20px;
+            }
+        }
+    }
+
+    // todolist
+    .Todolist {
+        display: flex;
+        flex-direction: column;
+    }
+}

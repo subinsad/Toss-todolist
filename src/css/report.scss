@@ -1,0 +1,74 @@
+@import './color.scss';
+@import './variable';
+
+// report
+.report {
+    display: flex;
+    flex-direction: column;
+    color: $color-white;
+
+    // 아이콘 크기
+    .material-symbols-outlined {
+        font-size: 30px;
+        color: $color-white;
+    }
+
+    .report-contents {
+        display: flex;
+        gap: 26px;
+
+        &__item-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            gap: 12px;
+            width: 140px;
+            border-radius: 16px;
+            padding: 20px 28px;
+            box-sizing: border-box;
+
+            background-color: $color-white;
+            color: $color-black;
+
+            .icon {
+                padding: 8px;
+
+                border-radius: 12px;
+                background-color: $color-blue800;
+            }
+
+            .icon:hover {
+                background-color: $color-grey900;
+                cursor: pointer;
+                transition: 0.3s;
+            }
+            .value {
+                font-size: 24px;
+                font-weight: 700;
+            }
+        }
+
+        // 추가박스
+        .add {
+            justify-content: center;
+            border: 1px dotted $color-area;
+            border-width: 5px; /* 위, 아래, 좌, 우 간격을 조절하여 점선 간격을 크게 설정 */
+
+            opacity: 0.8;
+            transition: 0.3s;
+
+            .icon {
+                background-color: $color-white;
+
+                .material-symbols-outlined {
+                    color: $color-black-10;
+                }
+            }
+        }
+
+        .add:hover {
+            opacity: 1;
+        }
+    }
+}
