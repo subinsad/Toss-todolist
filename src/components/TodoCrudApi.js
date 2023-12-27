@@ -17,14 +17,39 @@ export default class TodoCrudApi {
                 requestOptions
             );
 
-            const todosText = await response.text();
-            const todos = JSON.parse(todosText);
+            const todos = await response.json();
 
             return todos
                 .map((todo) => ({ ...todo, done: Boolean(todo.done) }))
                 .sort((a, b) => b.order - a.order);
         } catch (error) {
-            console.error('Error fetching todos:', error);
+            console.error('할 일 목록을 불러오는 중 오류 발생:', error);
+            throw error; // 에러를 호출한 쪽으로 전파합니다.
+        }
+    }
+
+    static async createTodo(newTodoTitle) {
+        try {
+            const apiUrl =
+                'https://asia-northeast3-heropy-api.cloudfunctions.net/api/todos';
+
+            const res = await fetch(apiUrl, {
+                method: 'POST',
+                headers: {
+                    'content-type': 'application/json',
+                    apikey: 'KDT7_GrZ1eYBo',
+                    username: 'KDT7_ParkSuBin',
+                },
+                body: JSON.stringify({
+                    title: newTodoTitle,
+                }),
+            });
+
+            const json = await res.json();
+            console.log(json);
+            return json;
+        } catch (error) {
+            console.error('할 일을 만드는 중 오류 발생:', error);
             throw error; // 에러를 호출한 쪽으로 전파합니다.
         }
     }
