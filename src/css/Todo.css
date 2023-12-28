@@ -1,0 +1,20 @@
+.Todolist .contents {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.Todolist .contents .todo-input {
+  width: 88%;
+}
+.Todolist .contents .input-box {
+  justify-content: space-between;
+}
+.Todolist .contents ul {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px;
+  box-sizing: border-box;
+  background-color: #c9e2ff;
+  border-radius: 12px;
+}/*# sourceMappingURL=Todo.css.map */

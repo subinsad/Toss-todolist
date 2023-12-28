@@ -20,8 +20,12 @@ export default class TodoCrudApi {
             const todos = await response.json();
 
             return todos
-                .map((todo) => ({ ...todo, done: Boolean(todo.done) }))
-                .sort((a, b) => b.order - a.order);
+                .map((todo) => ({
+                    ...todo,
+                    done: Boolean(todo.done),
+                    createdAt: new Date(todo.createdAt),
+                }))
+                .sort((a, b) => b.createdAt - a.createdAt);
         } catch (error) {
             console.error('할 일 목록을 불러오는 중 오류 발생:', error);
             throw error; // 에러를 호출한 쪽으로 전파합니다.

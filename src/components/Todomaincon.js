@@ -4,12 +4,16 @@ import TodoCrudApi from './TodoCrudApi';
 export default class TodoMaincon extends Component {
     async render() {
         this.el.innerHTML = /* html */ `
-            <div id="todoMainContainer">
-                <h3> To Do List </h3>
-                <input type="text" class="todo-input" placeholder="할 일 추가">
-                <button class="btn btn-normal add-todo">추가</button>
+        <div class="Todolist">
+            <h3> To Do List </h3> 
+            <div class="contents" id="todoMainContainer">
+                <div class="input-box">
+                    <input type="text" class="todo-input" placeholder="할 일 추가">
+                    <button class="btn btn-normal add-todo">추가</button>                
+                </div>
                 <ul id="todoItems"></ul>
             </div>
+        </div>
         `;
 
         document.addEventListener('DOMContentLoaded', async () => {
@@ -57,17 +61,16 @@ export default class TodoMaincon extends Component {
         todoItems.innerHTML = '';
 
         todos.forEach((todo) => {
-            this.renderTodoItem(todo);
+            this.renderTodoItem(todo, todoItems); // todoItems를 전달하여 직접 해당 부분에 투두를 추가하도록 수정
         });
     }
 
-    renderTodoItem(todo) {
-        const todoItems = this.el.querySelector('#todoItems');
+    renderTodoItem(todo, container) {
         const todoItem = document.createElement('li');
         const todoContent = document.createElement('span');
 
         todoContent.textContent = todo.title;
         todoItem.appendChild(todoContent);
-        todoItems.appendChild(todoItem);
+        container.appendChild(todoItem); // 전달받은 container에 직접 추가
     }
 }

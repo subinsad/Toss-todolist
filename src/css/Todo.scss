@@ -1,0 +1,30 @@
+@import './color.scss';
+@import './variable';
+
+.Todolist {
+    .contents {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+
+        .todo-input {
+            width: 88%;
+        }
+
+        .input-box {
+            justify-content: space-between;
+        }
+
+        ul {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+
+            padding: 16px;
+            box-sizing: border-box;
+
+            background-color: $color-blue100;
+            border-radius: 12px;
+        }
+    }
+}
