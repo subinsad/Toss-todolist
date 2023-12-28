@@ -27,6 +27,17 @@ export default class TodoMaincon extends Component {
                 const newTodoTitle = inputEl.value;
                 if (newTodoTitle.trim() !== '') {
                     await this.addTodo(newTodoTitle);
+                    await this.refreshTodos();
+                }
+            });
+
+            inputEl.addEventListener('keyup', async (event) => {
+                if (event.key === 'Enter') {
+                    const newTodoTitle = inputEl.value;
+                    if (newTodoTitle.trim() !== '') {
+                        await this.addTodo(newTodoTitle);
+                        await this.refreshTodos();
+                    }
                 }
             });
 
@@ -58,11 +69,23 @@ export default class TodoMaincon extends Component {
 
     displayTodos(todos) {
         const todoItems = this.el.querySelector('#todoItems');
-        todoItems.innerHTML = '';
 
         todos.forEach((todo) => {
-            this.renderTodoItem(todo, todoItems); // todoItems를 전달하여 직접 해당 부분에 투두를 추가하도록 수정
+            if (!this.isTodoInUI(todo, todoItems)) {
+                this.renderTodoItem(todo, todoItems);
+            }
         });
+    }
+
+    isTodoInUI(todo, container) {
+        // 현재 UI에 특정 투두가 이미 있는지 확인
+        const existingTodos = container.querySelectorAll('li');
+        for (const existingTodo of existingTodos) {
+            if (existingTodo.textContent === todo.title) {
+                return true;
+            }
+        }
+        return false;
     }
 
     renderTodoItem(todo, container) {
