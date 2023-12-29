@@ -4,8 +4,8 @@
   height: 430px;
   padding: 60px;
   box-sizing: border-box;
-  background-color: #17171c;
-  color: #8b95a1;
+  background-color: #ffe4ea;
+  color: #2c3950;
 }
 
 .left {
@@ -17,14 +17,14 @@
   align-items: center;
   gap: 12px;
   padding: 12px;
-  width: 250px;
+  width: 230px;
   position: absolute;
   top: -83px;
   box-shadow: 5px 5px 20px 0px black;
   border-radius: 50px;
-  background-color: #f86a05;
+  background-color: #ff7d9d;
   color: #fff;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 900;
 }
 .left__contents-box {
@@ -37,8 +37,8 @@
   align-items: center;
   gap: 120px;
   padding-bottom: 8px;
-  border-bottom: 1px solid white;
-  font-size: 35px;
+  border-bottom: 1px solid #1c212e;
+  font-size: 24px;
   font-weight: 600;
 }
 .left__contents-box__list {
@@ -53,16 +53,21 @@
 }
 .left__contents-box__list li .material-symbols-outlined,
 .left__contents-box__list li img {
-  width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
   border-radius: 100%;
-  font-size: 35px;
-  color: #fff;
+  font-size: 30px;
+  color: #1c212e;
 }
 .left__contents-box__list li p {
-  font-size: 24px;
-  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  color: #191f28;
 }
 .left__contents-box__list li a {
-  font-size: 17px;
-  color: #8b95a1;
+  font-size: 16px;
+  color: #333d4b;
 }/*# sourceMappingURL=About_skil.css.map */

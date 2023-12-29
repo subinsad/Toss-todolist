@@ -43,7 +43,7 @@ section article .icon-box {
 }
 section article .icon-box .material-symbols-outlined {
   font-size: 30px;
-  color: #fdc000;
+  color: #ff7d9d;
 }
 section article .profile {
   border-radius: 50%;
@@ -100,7 +100,7 @@ section .calendar .days .empty:hover {
 }
 section .calendar .days span:hover {
   border-radius: 12px;
-  background-color: #fdc000;
+  background-color: #ff7d9d;
   color: #fff;
   cursor: pointer;
 }

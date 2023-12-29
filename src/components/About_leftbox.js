@@ -17,7 +17,7 @@ export default class LeftBox extends Component {
 
             <div class="left__contents-box"> 
                 <div class="left__contents-box__title">
-                    <p> Photo Folio </p>   
+                    <p> Port-Folio </p>   
                     <span class="material-symbols-outlined">expand_circle_right</span>
                 </div>
 

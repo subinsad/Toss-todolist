@@ -55,11 +55,11 @@ router-view {
 }
 
 .btn:hover {
-  background-color: #194aa6;
+  background-color: #2c3950;
 }
 
 .btn-primary {
-  background-color: #fdc000;
+  background-color: #ff7d9d;
   color: #0e111b;
 }
 
