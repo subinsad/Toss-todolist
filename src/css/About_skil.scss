@@ -1,0 +1,89 @@
+@import './color.scss';
+@import './variable';
+
+.SkilContainer {
+    display: flex;
+    justify-content: space-around;
+
+    height: 430px;
+    padding: 60px;
+
+    box-sizing: border-box;
+    background-color: $color-darkBackground;
+    color: $color-grey500;
+}
+
+.left {
+    position: relative;
+
+    &__btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        gap: 12px;
+        padding: 12px;
+        width: 250px;
+
+        position: absolute;
+        top: -83px;
+
+        box-shadow: 5px 5px 20px 0px black;
+        border-radius: 50px;
+        background-color: $color-hover;
+        color: $color-white;
+        font-size: 20px;
+        font-weight: 900;
+    }
+
+    &__contents-box {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+
+        &__title {
+            display: flex;
+            align-items: center;
+
+            gap: 120px;
+            padding-bottom: 8px;
+
+            border-bottom: 1px solid white;
+            font-size: 35px;
+            font-weight: 600;
+        }
+
+        &__list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+
+            li {
+                display: flex;
+                align-items: center;
+
+                gap: 40px;
+
+                .material-symbols-outlined,
+                img {
+                    width: 50px;
+
+                    border-radius: 100%;
+
+                    font-size: 35px;
+                    color: $color-white;
+                }
+
+                p {
+                    font-size: 24px;
+                    color: $color-white;
+                }
+
+                a {
+                    font-size: 17px;
+                    color: $color-grey500;
+                }
+            }
+        }
+    }
+}
