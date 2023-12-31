@@ -1,21 +1,20 @@
 import { Component } from '../core/heropy';
-import LeftBox from './About_leftbox';
-import CenterBox from './About_centerbox';
+import PortFolio from './About_portfolio';
+import MySkilset from './About_myskilset';
 
 export default class Skil extends Component {
     render() {
         this.el.classList.add('SkilContainer');
 
-        const leftbox = new LeftBox();
-        const leftboxEl = leftbox.el;
+        const portfolio = new PortFolio();
+        const portfolioEl = portfolio.el;
 
-        const centerbox = new CenterBox();
-        const centerboxEl = centerbox.el;
+        const myskilset = new MySkilset();
+        const myskilsetEl = myskilset.el;
 
         this.el.innerHTML = /* html */ `
-            ${leftboxEl.innerHTML}
-            ${centerboxEl.innerHTML}
-            ${centerboxEl.innerHTML}
+            ${portfolioEl.innerHTML}
+            ${myskilsetEl.innerHTML}
         `;
     }
 }

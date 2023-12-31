@@ -1,7 +1,7 @@
 import { Component } from '../core/heropy';
 import Chart from 'chart.js/auto';
 
-export default class CenterBox extends Component {
+export default class MySkillset extends Component {
     constructor() {
         super({
             tagName: 'article',
@@ -10,22 +10,42 @@ export default class CenterBox extends Component {
 
     render() {
         this.el.innerHTML = /* html */ `
-        <div class="center">
+        <div class="MySkilset">
             <div class="title"> 
-                <h3> My Skilset </h3>
+                <h3> My Skillset </h3>
                 <span class="material-symbols-outlined">settings</span>
             </div>
-            <p class="subTitle"> Improved it by <span>12 points</span> last week </p>
 
             <div class="chart"> 
-                <canvas id="pie-chart" width="230" height="230"></canvas>
+                <canvas id="pie-chart" width="250" height="250"></canvas>
+                <ul>
+                    <li class="html">
+                        html
+                    </li>
+                    <li class="CSS">
+                        CSS
+                    </li>
+                    <li class="SCSS">
+                        SCSS
+                    </li>
+                    <li class="Javascript">
+                        Javascript
+                    </li>
+                    <li class="VUE">
+                        VUE.JS
+                    </li>
+                    <li class="REACT">
+                        REACT
+                    </li>
+                </ul>
             </div>
+
         </div>
         `;
 
         document.addEventListener('DOMContentLoaded', () => {
             new Chart(document.getElementById('pie-chart'), {
-                type: 'pie',
+                type: 'doughnut',
                 data: {
                     labels: [
                         'HTML',
@@ -51,6 +71,16 @@ export default class CenterBox extends Component {
                     ],
                 },
                 options: {
+                    plugins: {
+                        legend: {
+                            display: false,
+                            position: 'right',
+                            labels: {
+                                pointStyle: 'circle',
+                                fontSize: 12,
+                            },
+                        },
+                    },
                     title: {
                         display: true,
                         text: 'Most Used Languages',
