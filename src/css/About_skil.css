@@ -9,6 +9,8 @@
 }
 
 .PortFolio {
+  display: flex;
+  align-items: center;
   position: relative;
 }
 .PortFolio__btn {
@@ -20,7 +22,7 @@
   width: 230px;
   position: absolute;
   top: -83px;
-  box-shadow: 5px 5px 20px 0px black;
+  box-shadow: 5px 5px 20px 0px rgba(0, 0, 0, 0.3098039216);
   border-radius: 50px;
   background-color: #ff7d9d;
   color: #fff;

@@ -15,6 +15,9 @@
 
 //portfolio
 .PortFolio {
+    display: flex;
+    align-items: center;
+
     position: relative;
 
     &__btn {
@@ -29,7 +32,7 @@
         position: absolute;
         top: -83px;
 
-        box-shadow: 5px 5px 20px 0px black;
+        box-shadow: 5px 5px 20px 0px #0000004f;
         border-radius: 50px;
         background-color: $color-primary;
         color: $color-white;
