@@ -70,4 +70,22 @@
 .left__contents-box__list li a {
   font-size: 16px;
   color: #333d4b;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.center .title {
+  display: flex;
+  align-items: center;
+  gap: 120px;
+  padding-bottom: 8px;
+  font-size: 24px;
+  font-weight: 600;
+}
+.center .title h3 {
+  margin-bottom: 0px;
+  font-size: 24px;
 }/*# sourceMappingURL=About_skil.css.map */
