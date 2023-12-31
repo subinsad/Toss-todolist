@@ -99,7 +99,7 @@
 }
 .MySkilset .chart {
   display: flex;
-  gap: 108px;
+  gap: 120px;
   width: 200px;
   position: absolute;
   top: 86px;

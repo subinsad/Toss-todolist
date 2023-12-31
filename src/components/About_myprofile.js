@@ -9,7 +9,7 @@ export default class Header extends Component {
             </div>
 
             <div class="text-box"> 
-                <span class="years">24</span>
+                <span class="years">25</span>
 
                 <div class="info"> 
                     <p class="info__name">Hello, my name is <br> Subin</p>
