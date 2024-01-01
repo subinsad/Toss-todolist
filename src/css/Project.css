@@ -1,0 +1,17 @@
+.Project {
+  padding: 40px;
+  color: #fff;
+  background-color: #8b95a1;
+}
+.Project .header {
+  display: flex;
+  justify-content: space-between;
+}
+.Project .button {
+  display: flex;
+  gap: 12px;
+}
+.Project .button .btn-nomal {
+  background-color: #fff;
+  color: #000;
+}/*# sourceMappingURL=Project.css.map */

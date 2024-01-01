@@ -1,0 +1,25 @@
+@import './color.scss';
+@import './variable';
+
+.Project {
+    padding: 40px;
+
+    color: $color-white;
+    background-color: $color-grey500;
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .button {
+        display: flex;
+
+        gap: 12px;
+
+        .btn-nomal {
+            background-color: $color-white;
+            color: $color-black;
+        }
+    }
+}

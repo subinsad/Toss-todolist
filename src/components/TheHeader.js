@@ -13,7 +13,7 @@ export default class TheHeader extends Component {
                     },
                     {
                         name: 'Todo',
-                        href: '#/todo',
+                        href: '#/projects',
                         icon: 'list_alt', // Google Material Icons list_alt icon
                     },
                     {
