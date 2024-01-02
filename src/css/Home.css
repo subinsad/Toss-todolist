@@ -15,17 +15,14 @@
   flex-direction: column;
   padding: 32px;
   border-radius: 20px;
-  background-color: #fff;
-  background-image: url(../img/banner2.webp);
+  background-color: #202c4d;
   background-position: left;
   background-repeat: no-repeat;
   background-size: auto;
+  color: #fff;
 }
 .Home-Container .main-banner .contents {
   line-height: 1.6;
-}
-.Home-Container .main-banner .contents span {
-  color: #fff;
 }
 .Home-Container .main-banner .contents p {
   font-size: 20px;

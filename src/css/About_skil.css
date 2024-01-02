@@ -19,7 +19,7 @@
   align-items: center;
   gap: 12px;
   padding: 12px;
-  width: 230px;
+  width: 95%;
   position: absolute;
   top: -83px;
   box-shadow: 5px 5px 20px 0px rgba(0, 0, 0, 0.3098039216);
@@ -116,6 +116,7 @@
   flex-direction: column;
   justify-content: space-around;
   position: relative;
+  font-weight: 600;
 }
 .MySkilset .chart-box .chart ul li::before {
   content: "";

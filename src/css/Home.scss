@@ -27,17 +27,16 @@
         padding: 32px;
         border-radius: 20px;
 
-        background-color: $color-white;
-        background-image: url(../img/banner2.webp);
+        background-color: $color-darkThemeBlue50;
+        //background-image: url(../img/banner2.webp);
         background-position: left;
         background-repeat: no-repeat;
         background-size: auto;
 
+        color: $color-white;
+
         .contents {
             line-height: 1.6;
-            span {
-                color: $color-white;
-            }
             p {
                 font-size: 20px;
             }
