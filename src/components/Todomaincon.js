@@ -23,6 +23,8 @@ export default class TodoMaincon extends Component {
             const addTodoButton = todoMainContainer.querySelector('.add-todo');
             const inputEl = todoMainContainer.querySelector('.todo-input');
 
+            this.refreshTodos();
+
             // 버튼 클릭 시 투두 입력
             addTodoButton.addEventListener('click', async () => {
                 const newTodoTitle = inputEl.value;
@@ -43,11 +45,11 @@ export default class TodoMaincon extends Component {
                 }
             });
 
-            try {
-                await this.refreshTodos();
-            } catch (error) {
-                console.error('할 일 목록을 불러오는 중 오류 발생:', error);
-            }
+            // try {
+            //     await this.refreshTodos();
+            // } catch (error) {
+            //     console.error('할 일 목록을 불러오는 중 오류 발생:', error);
+            // }
         });
     }
 
