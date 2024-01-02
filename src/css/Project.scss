@@ -2,7 +2,11 @@
 @import './variable';
 
 .Project {
-    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+
+    padding: 40px 0;
 
     color: $color-white;
     background-color: $color-grey500;
@@ -10,6 +14,12 @@
     .header {
         display: flex;
         justify-content: space-between;
+
+        padding: 0 40px;
+
+        h2 {
+            text-shadow: 1px 1px 8px #3c3c3c;
+        }
     }
 
     .button {
@@ -24,16 +34,125 @@
     }
 }
 
-.item {
+.items-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    flex-wrap: wrap;
+    gap: 10% 2%;
+    width: 100%;
+}
+
+.list {
     display: flex;
 
-    &__icon .material-symbols-outlined {
-        background: black;
-        padding: 10px;
-        font-size: 35px;
-        border-radius: 12px;
-    }
+    padding: 40px;
 
-    &__title-box {
+    .item {
+        display: flex;
+        flex-direction: column;
+
+        padding: 12px;
+        gap: 20px;
+
+        position: relative;
+
+        box-sizing: border-box;
+        background: $color-white;
+        color: $color-area;
+        border-radius: 12px;
+        box-shadow: 5px 5px 20px 0px rgba(0, 0, 0, 0.3098);
+
+        .material-symbols-outlined {
+            text-align: right;
+            color: $color-grey600;
+        }
+
+        &__icon {
+            display: flex;
+            justify-content: center;
+
+            position: absolute;
+            top: -32px;
+            left: 0;
+            right: 0;
+            margin: auto;
+
+            .material-symbols-outlined {
+                padding: 10px;
+
+                border-radius: 12px;
+                background-color: black;
+                font-size: 50px;
+                color: $color-white;
+                box-shadow: 5px 5px 20px 0px rgba(0, 0, 0, 0.435);
+            }
+        }
+
+        &__title-box {
+            text-align: center;
+
+            b {
+                font-size: 20px;
+                font-weight: 700;
+            }
+
+            p {
+                font-size: 16px;
+                color: $color-grey700;
+            }
+        }
+
+        &__Progress-box {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+
+            &__text {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                font-weight: 900;
+
+                p {
+                    font-size: 13px;
+                    color: $color-grey700;
+                }
+            }
+
+            progress {
+                width: 100%;
+            }
+        }
+
+        &__icon-box {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            font-size: 14px;
+
+            &__chat {
+                display: flex;
+                align-items: center;
+
+                gap: 4px;
+
+                color: $color-grey700;
+            }
+
+            &__time {
+                display: flex;
+                align-items: center;
+
+                gap: 4px;
+                padding: 4px 12px;
+
+                background-color: $color-grey300;
+                border-radius: 50px;
+                font-size: 12px;
+                font-weight: 600;
+            }
+        }
     }
 }

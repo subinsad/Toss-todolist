@@ -1,11 +1,18 @@
 .Project {
-  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  padding: 40px 0;
   color: #fff;
   background-color: #8b95a1;
 }
 .Project .header {
   display: flex;
   justify-content: space-between;
+  padding: 0 40px;
+}
+.Project .header h2 {
+  text-shadow: 1px 1px 8px #3c3c3c;
 }
 .Project .button {
   display: flex;
@@ -16,12 +23,99 @@
   color: #000;
 }
 
-.item {
-  display: flex;
+.items-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  flex-wrap: wrap;
+  gap: 10% 2%;
+  width: 100%;
 }
-.item__icon .material-symbols-outlined {
-  background: black;
-  padding: 10px;
-  font-size: 35px;
+
+.list {
+  display: flex;
+  padding: 40px;
+}
+.list .item {
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+  gap: 20px;
+  position: relative;
+  box-sizing: border-box;
+  background: #fff;
+  color: #1c212e;
   border-radius: 12px;
+  box-shadow: 5px 5px 20px 0px rgba(0, 0, 0, 0.3098);
+}
+.list .item .material-symbols-outlined {
+  text-align: right;
+  color: #6b7684;
+}
+.list .item__icon {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: -32px;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+.list .item__icon .material-symbols-outlined {
+  padding: 10px;
+  border-radius: 12px;
+  background-color: black;
+  font-size: 50px;
+  color: #fff;
+  box-shadow: 5px 5px 20px 0px rgba(0, 0, 0, 0.435);
+}
+.list .item__title-box {
+  text-align: center;
+}
+.list .item__title-box b {
+  font-size: 20px;
+  font-weight: 700;
+}
+.list .item__title-box p {
+  font-size: 16px;
+  color: #4e5968;
+}
+.list .item__Progress-box {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.list .item__Progress-box__text {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 900;
+}
+.list .item__Progress-box__text p {
+  font-size: 13px;
+  color: #4e5968;
+}
+.list .item__Progress-box progress {
+  width: 100%;
+}
+.list .item__icon-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+}
+.list .item__icon-box__chat {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #4e5968;
+}
+.list .item__icon-box__time {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 12px;
+  background-color: #d1d6db;
+  border-radius: 50px;
+  font-size: 12px;
+  font-weight: 600;
 }/*# sourceMappingURL=Project.css.map */

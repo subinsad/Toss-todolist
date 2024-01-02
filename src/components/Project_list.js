@@ -23,46 +23,100 @@ export default class List extends Component {
                 chatText: 3,
                 time: 2,
             },
+            {
+                titleIcon: 'apps',
+                title: 'App Development',
+                subTitle: 'Belong lnteractive',
+                progress: 45,
+                shareText: 5,
+                chatText: 3,
+                time: 2,
+            },
+            {
+                titleIcon: 'apps',
+                title: 'App Development',
+                subTitle: 'Belong lnteractive',
+                progress: 45,
+                shareText: 5,
+                chatText: 3,
+                time: 2,
+            },
+            {
+                titleIcon: 'apps',
+                title: 'App Development',
+                subTitle: 'Belong lnteractive',
+                progress: 45,
+                shareText: 5,
+                chatText: 3,
+                time: 2,
+            },
+            {
+                titleIcon: 'apps',
+                title: 'App Development',
+                subTitle: 'Belong lnteractive',
+                progress: 45,
+                shareText: 5,
+                chatText: 3,
+                time: 2,
+            },
         ];
 
         const contentsHTML = items
-            .map(
-                (item) => /* html */ `
-        <div class="item">
-            <div class="item__icon">
-                <span class="material-symbols-outlined">${item.titleIcon}</span>
-            </div>
-            <span class="material-symbols-outlined"> more_vert</span>
+            .map((item) => {
+                const randomColor = getRandomColor();
+                return /* html */ `
+                    <div class="item">
+                        <div class="item__icon">
+                            <span class="material-symbols-outlined" style="background-color:${randomColor}">${item.titleIcon}</span>
+                        </div>
+                        <span class="material-symbols-outlined"> more_vert</span>
 
-            <div class="item__title-box">
-                <b> ${item.title} </b>
-                <p> ${item.subTitle} </p>
-            </div>
+                        <div class="item__title-box">
+                            <b>${item.title}</b>
+                            <p>${item.subTitle}</p>
+                        </div>
 
-            <div class="">
-                <div>
-                    <b> Progress </b>
-                    <p> ${item.progress} </p>
-                </div>
-                <progress value="${item.progress}" max="100"></progress>
+                        <div class="item__Progress-box">
+                            <div class="item__Progress-box__text">
+                                <b>Progress</b>
+                                <p>${item.progress}%</p>
+                            </div>
+                            <progress value="${item.progress}" max="100"></progress>
+                        </div>
 
-            <div>
-                <span class="material-symbols-outlined">share</span>
-                <span> ${item.shareText} <span>
+                        <div class="item__icon-box">
+                            <div class="item__icon-box__chat">
+                                <span class="material-symbols-outlined">share</span>
+                                <span>${item.shareText}</span>
+                                <span class="material-symbols-outlined">chat</span>
+                                <span>${item.chatText}</span>
+                            </div>
 
-                <span class="material-symbols-outlined">chat</span>
-                <span> ${item.chatText} <span>
-            </div>
-
-            <div> 
-            <span class="material-symbols-outlined">schedule</span>
-            <p> ${item.time} Week left <p>
-            </div>
-        </div>
-        `
-            )
+                            <div class="item__icon-box__time">
+                                <span class="material-symbols-outlined">schedule</span>
+                                <p>${item.time} Week left</p>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            })
             .join('');
 
-        this.el.innerHTML = contentsHTML;
+        // items를 감싸는 div 추가
+        const itemsContainer = document.createElement('div');
+        itemsContainer.classList.add('items-container');
+        itemsContainer.innerHTML = contentsHTML;
+
+        this.el.appendChild(itemsContainer);
+
+        //랜덤색상
+        function getRandomColor() {
+            const letters = '0123456789ABCDEF';
+            let color = '#';
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
     }
 }
