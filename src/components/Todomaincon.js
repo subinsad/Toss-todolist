@@ -39,7 +39,7 @@ export default class TodoMaincon extends Component {
                 if (event.isComposing) return;
                 if (event.key === 'Enter') {
                     const newTodoTitle = inputEl.value;
-
+                    inputEl.value = ''; //엔터 시 초기화
                     console.log('test');
 
                     if (newTodoTitle.trim() !== '') {
