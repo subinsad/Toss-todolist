@@ -2,7 +2,7 @@ import { Component } from '../core/heropy';
 import TodoCrudApi from './TodoCrudApi';
 
 export default class TodoMaincon extends Component {
-    async render() {
+    render() {
         this.el.innerHTML = /* html */ `
             <div class="Todolist">
                 <h3> To Do List </h3> 
@@ -26,29 +26,33 @@ export default class TodoMaincon extends Component {
             this.refreshTodos();
 
             // 버튼 클릭 시 투두 입력
-            addTodoButton.addEventListener('click', async () => {
+            addTodoButton.addEventListener('click', () => {
                 const newTodoTitle = inputEl.value;
                 if (newTodoTitle.trim() !== '') {
-                    await this.addTodo(newTodoTitle);
-                    await this.refreshTodos();
+                    this.addTodo(newTodoTitle);
+                    this.refreshTodos();
                 }
             });
 
             // 엔터키로 입력
-            inputEl.addEventListener('keyup', async (event) => {
+            inputEl.addEventListener('keydown', (event) => {
+                if (event.isComposing) return;
                 if (event.key === 'Enter') {
                     const newTodoTitle = inputEl.value;
+
+                    console.log('test');
+
                     if (newTodoTitle.trim() !== '') {
-                        await this.addTodo(newTodoTitle);
-                        await this.refreshTodos();
+                        this.addTodo(newTodoTitle);
+                        this.refreshTodos();
                     }
                 }
             });
 
             // try {
-            //     await this.refreshTodos();
+            //     await this.refreshTodos()
             // } catch (error) {
-            //     console.error('할 일 목록을 불러오는 중 오류 발생:', error);
+            //     console.error('할 일 목록을 불러오는 중 오류 발생:', error)
             // }
         });
     }
