@@ -14,4 +14,14 @@
 .Project .button .btn-nomal {
   background-color: #fff;
   color: #000;
+}
+
+.item {
+  display: flex;
+}
+.item__icon .material-symbols-outlined {
+  background: black;
+  padding: 10px;
+  font-size: 35px;
+  border-radius: 12px;
 }/*# sourceMappingURL=Project.css.map */

@@ -16,8 +16,9 @@ export default class MySkillset extends Component {
                 <span class="material-symbols-outlined">settings</span>
             </div>
 
-            <div class="chart"> 
-                <canvas id="pie-chart" width="250" height="250"></canvas>
+            <div class="chart-box"> 
+                <div class="chart"> 
+                <canvas id="pie-chart" width="50" height="250"></canvas>
                 <ul>
                     <li class="html">
                         html
@@ -38,6 +39,7 @@ export default class MySkillset extends Component {
                         REACT
                     </li>
                 </ul>
+            </div>
             </div>
 
         </div>

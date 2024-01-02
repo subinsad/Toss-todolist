@@ -77,6 +77,7 @@
 .MySkilset {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 12px;
   position: relative;
   width: 55%;
@@ -88,6 +89,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 100%;
   gap: 120px;
   padding-bottom: 8px;
   font-size: 24px;
@@ -97,25 +99,25 @@
   margin-bottom: 0px;
   font-size: 24px;
 }
-.MySkilset .chart {
-  display: flex;
-  gap: 120px;
-  width: 200px;
-  position: absolute;
-  top: 86px;
-  left: 74px;
+.MySkilset .chart-box {
+  width: 350px;
 }
-.MySkilset .chart #pie-chart {
-  width: 250px;
+.MySkilset .chart-box .chart {
+  display: flex;
+  width: 200px;
+  gap: 42%;
+}
+.MySkilset .chart-box .chart #pie-chart {
+  width: 200px;
   height: 250px;
 }
-.MySkilset .chart ul {
+.MySkilset .chart-box .chart ul {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   position: relative;
 }
-.MySkilset .chart ul li::before {
+.MySkilset .chart-box .chart ul li::before {
   content: "";
   display: block;
   position: absolute;
@@ -125,21 +127,21 @@
   border-radius: 4px;
   background-color: #ff7d9d;
 }
-.MySkilset .chart ul .html::before {
+.MySkilset .chart-box .chart ul .html::before {
   background-color: #e34f26;
 }
-.MySkilset .chart ul .CSS::before {
+.MySkilset .chart-box .chart ul .CSS::before {
   background-color: #1572b6;
 }
-.MySkilset .chart ul .SCSS::before {
+.MySkilset .chart-box .chart ul .SCSS::before {
   background-color: #cc6699;
 }
-.MySkilset .chart ul .Javascript::before {
+.MySkilset .chart-box .chart ul .Javascript::before {
   background-color: #f7df1e;
 }
-.MySkilset .chart ul .VUE::before {
+.MySkilset .chart-box .chart ul .VUE::before {
   background-color: #4fc08d;
 }
-.MySkilset .chart ul .REACT::before {
+.MySkilset .chart-box .chart ul .REACT::before {
   background-color: #61dafb;
 }/*# sourceMappingURL=About_skil.css.map */

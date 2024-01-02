@@ -4,28 +4,65 @@ export default class List extends Component {
     render() {
         this.el.classList.add('list');
 
-        this.el.innerHTML = /* html */ `
-        <div class="contents">
-            <span class="material-symbols-outlined">apps</span>
+        const items = [
+            {
+                titleIcon: 'apps',
+                title: 'App Development',
+                subTitle: 'Belong lnteractive',
+                progress: 45,
+                shareText: 5,
+                chatText: 3,
+                time: 2,
+            },
+            {
+                titleIcon: 'apps',
+                title: 'App Development',
+                subTitle: 'Belong lnteractive',
+                progress: 45,
+                shareText: 5,
+                chatText: 3,
+                time: 2,
+            },
+        ];
+
+        const contentsHTML = items
+            .map(
+                (item) => /* html */ `
+        <div class="item">
+            <div class="item__icon">
+                <span class="material-symbols-outlined">${item.titleIcon}</span>
+            </div>
             <span class="material-symbols-outlined"> more_vert</span>
 
-            <div class="">
-                <b> App Development </b>
-                <p> Belong lnteractive </p>
+            <div class="item__title-box">
+                <b> ${item.title} </b>
+                <p> ${item.subTitle} </p>
             </div>
 
             <div class="">
                 <div>
                     <b> Progress </b>
-                    <p> 45% </p>
+                    <p> ${item.progress} </p>
                 </div>
-                <progress value="20" max="100"></progress>
+                <progress value="${item.progress}" max="100"></progress>
 
             <div>
-                
+                <span class="material-symbols-outlined">share</span>
+                <span> ${item.shareText} <span>
 
+                <span class="material-symbols-outlined">chat</span>
+                <span> ${item.chatText} <span>
+            </div>
+
+            <div> 
+            <span class="material-symbols-outlined">schedule</span>
+            <p> ${item.time} Week left <p>
             </div>
         </div>
-        `;
+        `
+            )
+            .join('');
+
+        this.el.innerHTML = contentsHTML;
     }
 }
