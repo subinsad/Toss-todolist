@@ -68,6 +68,7 @@ export default class TodoMaincon extends Component {
         }
 
         const todoItem = document.createElement('li');
+        const checkbox = document.createElement('input');
         const todoContent = document.createElement('span');
         const editBtn = document.createElement('button');
         const editInput = document.createElement('input');
@@ -76,12 +77,22 @@ export default class TodoMaincon extends Component {
 
         todoContent.textContent = todo.title;
 
+        // 체크박스
+        checkbox.type = 'checkbox';
+        checkbox.checked = todo.done;
+
         editBtn.innerHTML =
             '<span class="material-symbols-outlined">edit</span>';
         deleteBtn.innerHTML =
             '<span class="material-symbols-outlined">delete</span>';
         editInput.type = 'text';
         editInput.style.display = 'none'; // 처음에는 숨겨놓기
+
+        //체크박스
+        checkbox.addEventListener('change', async () => {
+            await this.updateTodo(todo.id, { done: checkbox.checked });
+            await this.refreshTodos();
+        });
 
         // 삭제버튼
         deleteBtn.addEventListener('click', async () => {
@@ -92,6 +103,7 @@ export default class TodoMaincon extends Component {
         // 수정버튼
         editBtn.addEventListener('click', () => {
             todoContent.style.display = 'none';
+            deleteBtn.style.display = 'none';
             editInput.style.display = 'inline-block';
             editInput.value = todo.title;
             editInput.focus(); // 수정 input에 포커스 주기
@@ -109,16 +121,27 @@ export default class TodoMaincon extends Component {
             }
         });
 
+        // 포커스 아웃으로 수정기능 추가
+        editInput.addEventListener('blur', async () => {
+            const updatedTodoTitle = editInput.value;
+            if (updatedTodoTitle.trim() !== '') {
+                await this.updateTodo(todo.id, updatedTodoTitle);
+                await this.refreshTodos();
+            }
+        });
+
         // 포커스가 없어질 때 수정 input을 숨기고, 텍스트를 보이기
         editInput.addEventListener('blur', async () => {
             editInput.style.display = 'none';
             todoContent.style.display = 'inline-block';
         });
 
+        // 엘리먼트를 todoItems에 추가
+        todoItem.appendChild(checkbox);
         todoItem.appendChild(todoContent);
+        todoItem.appendChild(editInput); // input 위치 UX 고려
         todoItem.appendChild(editBtn);
         todoItem.appendChild(deleteBtn);
-        todoItem.appendChild(editInput);
         todoItem.appendChild(updatedTime);
 
         container.appendChild(todoItem);

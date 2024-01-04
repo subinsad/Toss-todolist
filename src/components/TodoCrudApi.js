@@ -82,17 +82,42 @@ export default class TodoCrudApi {
                 },
                 body: JSON.stringify({
                     title: newTodoTitle,
+                    order: 1, // 마지막 할 일 order + 1
                 }),
             });
 
             const json = await res.json();
             console.log(json);
+
             return json;
         } catch (error) {
             console.error('할 일을 만드는 중 오류 발생:', error);
             throw error; // 에러를 호출한 쪽으로 전파합니다.
         }
     }
+    // order 마지막 값
+    // static async LastOrder() {
+    //     try {
+    //         const apiUrl =
+    //             'https://asia-northeast3-heropy-api.cloudfunctions.net/api/todos/last-order';
+
+    //         const res = await fetch(apiUrl, {
+    //             method: 'GET',
+    //             headers: {
+    //                 apikey: 'KDT7_GrZ1eYBo',
+    //                 username: 'KDT7_ParkSuBin',
+    //             },
+    //         });
+
+    //         const json = await res.json();
+    //         console.log(json);
+
+    //         return json;
+    //     } catch (error) {
+    //         console.error('할 일을 만드는 중 오류 발생:', error);
+    //         throw error; // 에러를 호출한 쪽으로 전파합니다.
+    //     }
+    // }
 
     static async updateTodo(todoId, updatedTodoTitle) {
         try {
@@ -108,6 +133,7 @@ export default class TodoCrudApi {
                 body: JSON.stringify({
                     title: updatedTodoTitle,
                     done: false,
+                    order: 1,
                     //createdAt: new Date().toISOString(),
                 }),
             });
