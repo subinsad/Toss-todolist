@@ -66,6 +66,12 @@ export default class Calendar extends Component {
             }
         }
 
+        // 마지막 주 나머지 빈칸에 추가
+        const lastweek = 7 - ((firstDayOfMonth + daysInMonth) % 7);
+        for (let i = 0; i < lastweek; i++) {
+            calendarHTML += `<span class="empty"></span>`;
+        }
+
         calendarHTML += '</div>';
         this.el.innerHTML = calendarHTML;
     }

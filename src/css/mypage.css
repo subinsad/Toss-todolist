@@ -83,8 +83,13 @@ section .calendar .header__month {
 section .calendar .header__week {
   display: flex;
   gap: 8%;
-  justify-content: center;
+  justify-content: space-around;
   font-size: 16px;
+}
+section .calendar .header__week__day {
+  display: flex;
+  justify-content: center;
+  width: 40px;
 }
 section .calendar .days {
   display: flex;
@@ -92,7 +97,11 @@ section .calendar .days {
   font-size: 15px;
 }
 section .calendar .days span {
-  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
   transition: 0.5s;
 }
 section .calendar .days .empty:hover {
