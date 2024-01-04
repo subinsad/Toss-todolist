@@ -71,7 +71,8 @@ export default class TodoMaincon extends Component {
         const todoContent = document.createElement('span');
         const editBtn = document.createElement('button');
         const editInput = document.createElement('input');
-        const deleteBtn = document.createElement('button');
+        const deleteBtn = document.createElement('button'); // 삭제
+        const updatedTime = document.createElement('span'); // 수정 시간
 
         todoContent.textContent = todo.title;
 
@@ -118,8 +119,14 @@ export default class TodoMaincon extends Component {
         todoItem.appendChild(editBtn);
         todoItem.appendChild(deleteBtn);
         todoItem.appendChild(editInput);
+        todoItem.appendChild(updatedTime);
 
         container.appendChild(todoItem);
+    }
+
+    formatTime(timestamp) {
+        const date = new Date(timestamp);
+        return date.toLocaleString();
     }
 
     async refreshTodos() {
@@ -180,11 +187,11 @@ export default class TodoMaincon extends Component {
             // TodoCrudApi.updateTodo에서 반환되는 값을 저장
             const response = await TodoCrudApi.updateTodo(todoId, updatedTitle);
 
-            if (res) {
-                const json = await res.json();
+            if (response) {
+                const json = await response.json();
                 throw new Error(
                     `Todo 업데이트에 실패했습니다. 응답 코드: ${
-                        res.status
+                        response.status
                     }, 메시지: ${json.message || '알 수 없는 오류'}`
                 );
             } else {
