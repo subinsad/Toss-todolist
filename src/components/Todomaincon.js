@@ -23,7 +23,7 @@ export default class TodoMaincon extends Component {
             const addTodoButton = todoMainContainer.querySelector('.add-todo');
             const inputEl = todoMainContainer.querySelector('.todo-input');
 
-            this.refreshTodos();
+            await this.refreshTodos();
 
             // 버튼 클릭 시 투두 입력
             addTodoButton.addEventListener('click', () => {
@@ -39,7 +39,7 @@ export default class TodoMaincon extends Component {
                 if (event.isComposing) return;
                 if (event.key === 'Enter') {
                     const newTodoTitle = inputEl.value;
-                    inputEl.value = ''; //엔터 시 초기화
+                    inputEl.value = ''; // 엔터 시 초기화
                     console.log('test');
 
                     if (newTodoTitle.trim() !== '') {
@@ -48,12 +48,6 @@ export default class TodoMaincon extends Component {
                     }
                 }
             });
-
-            // try {
-            //     await this.refreshTodos()
-            // } catch (error) {
-            //     console.error('할 일 목록을 불러오는 중 오류 발생:', error)
-            // }
         });
     }
 
@@ -75,20 +69,57 @@ export default class TodoMaincon extends Component {
 
         const todoItem = document.createElement('li');
         const todoContent = document.createElement('span');
+        const editBtn = document.createElement('button');
+        const editInput = document.createElement('input');
         const deleteBtn = document.createElement('button');
 
         todoContent.textContent = todo.title;
-        deleteBtn.textContent = '삭제';
 
+        editBtn.innerHTML =
+            '<span class="material-symbols-outlined">edit</span>';
+        deleteBtn.innerHTML =
+            '<span class="material-symbols-outlined">delete</span>';
+        editInput.type = 'text';
+        editInput.style.display = 'none'; // 처음에는 숨겨놓기
+
+        // 삭제버튼
         deleteBtn.addEventListener('click', async () => {
             await this.deleteTodo(todo.id);
             await this.refreshTodos();
         });
 
-        todoItem.appendChild(todoContent);
-        todoItem.appendChild(deleteBtn);
+        // 수정버튼
+        editBtn.addEventListener('click', () => {
+            todoContent.style.display = 'none';
+            editInput.style.display = 'inline-block';
+            editInput.value = todo.title;
+            editInput.focus(); // 수정 input에 포커스 주기
+        });
 
-        container.appendChild(todoItem); // 전달받은 container에 직접 추가
+        // 수정input
+        editInput.addEventListener('keydown', async (event) => {
+            if (event.isComposing) return;
+            if (event.key === 'Enter') {
+                const updatedTodoTitle = editInput.value;
+                if (updatedTodoTitle.trim() !== '') {
+                    await this.updateTodo(todo.id, updatedTodoTitle);
+                    await this.refreshTodos();
+                }
+            }
+        });
+
+        // 포커스가 없어질 때 수정 input을 숨기고, 텍스트를 보이기
+        editInput.addEventListener('blur', async () => {
+            editInput.style.display = 'none';
+            todoContent.style.display = 'inline-block';
+        });
+
+        todoItem.appendChild(todoContent);
+        todoItem.appendChild(editBtn);
+        todoItem.appendChild(deleteBtn);
+        todoItem.appendChild(editInput);
+
+        container.appendChild(todoItem);
     }
 
     async refreshTodos() {
@@ -142,5 +173,25 @@ export default class TodoMaincon extends Component {
             console.error('할 일을 삭제하는 중 오류 발생:', error);
             throw error;
         }
+    }
+
+    async updateTodo(todoId, updatedTitle) {
+        try {
+            // TodoCrudApi.updateTodo에서 반환되는 값을 저장
+            const response = await TodoCrudApi.updateTodo(todoId, updatedTitle);
+
+            if (res) {
+                const json = await res.json();
+                throw new Error(
+                    `Todo 업데이트에 실패했습니다. 응답 코드: ${
+                        res.status
+                    }, 메시지: ${json.message || '알 수 없는 오류'}`
+                );
+            } else {
+                throw new Error(
+                    'Todo 업데이트에 실패했습니다. 응답이 없습니다.'
+                );
+            }
+        } catch (error) {}
     }
 }
