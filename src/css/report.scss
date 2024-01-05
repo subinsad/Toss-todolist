@@ -72,3 +72,18 @@
         }
     }
 }
+
+@media all and (max-width: $breackpoint-mobile) {
+    .report {
+        .report-contents {
+            white-space: nowrap;
+            overflow-x: scroll;
+
+            &__item-box {
+                width: 50%;
+                border-radius: 16px;
+                padding: 12px 44px;
+            }
+        }
+    }
+}

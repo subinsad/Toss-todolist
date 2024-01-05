@@ -49,3 +49,24 @@
         flex-direction: column;
     }
 }
+
+/* 모바일 가로, 모바일 세로 (해상도 480px ~ 767px)*/
+@media all and (max-width: $breackpoint-mobile) {
+    .Home-Container {
+        .input-box {
+            width: 100%;
+            input {
+                width: 80%;
+            }
+            .btn {
+                width: 22%;
+                height: 34px;
+                padding: 0;
+            }
+        }
+
+        .btn-box {
+            display: none;
+        }
+    }
+}

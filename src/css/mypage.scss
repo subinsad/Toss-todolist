@@ -167,3 +167,9 @@ section {
         width: 100%;
     }
 }
+
+@media all and (max-width: $breackpoint-mobile) {
+    section {
+        display: none;
+    }
+}

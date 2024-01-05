@@ -145,4 +145,48 @@
 }
 .MySkilset .chart-box .chart ul .REACT::before {
   background-color: #61dafb;
+}
+
+@media all and (max-width: 767px) {
+  .SkilContainer {
+    flex-direction: column;
+    height: auto;
+    gap: 24px;
+    padding: 40px;
+  }
+  .SkilContainer .PortFolio__btn {
+    display: none;
+  }
+  .SkilContainer .PortFolio__contents-box {
+    width: 100%;
+  }
+  .SkilContainer .PortFolio__contents-box__title {
+    justify-content: space-between;
+    gap: 0;
+    width: 100%;
+  }
+  .SkilContainer .PortFolio__contents-box__list {
+    padding: 0 12px;
+  }
+  .MySkilset {
+    width: auto;
+  }
+  .MySkilset .chart-box {
+    width: auto;
+  }
+  .MySkilset .chart-box .chart {
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+  }
+  .MySkilset .chart-box .chart ul {
+    gap: 8px;
+    font-weight: 500;
+    font-size: 14px;
+  }
+  .MySkilset .chart-box .chart ul li::before {
+    left: -22px;
+    width: 12px;
+    height: 12px;
+  }
 }/*# sourceMappingURL=About_skil.css.map */

@@ -72,3 +72,11 @@
         }
     }
 }
+
+@media all and (max-width: $breackpoint-mobile) {
+    .AboutContainer {
+        flex-direction: column;
+
+        height: 70vh;
+    }
+}

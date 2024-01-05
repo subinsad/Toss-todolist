@@ -50,4 +50,11 @@
   flex-direction: column;
   align-items: center;
   gap: 12px;
+}
+
+@media all and (max-width: 767px) {
+  .AboutContainer {
+    flex-direction: column;
+    height: 70vh;
+  }
 }/*# sourceMappingURL=About_myprofile.css.map */

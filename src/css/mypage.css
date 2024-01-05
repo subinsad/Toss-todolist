@@ -123,4 +123,10 @@ section .calendar > div {
   flex-direction: column;
   gap: 8px;
   width: 100%;
+}
+
+@media all and (max-width: 767px) {
+  section {
+    display: none;
+  }
 }/*# sourceMappingURL=mypage.css.map */

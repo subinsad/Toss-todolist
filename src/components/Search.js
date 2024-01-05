@@ -9,7 +9,7 @@ export default class Search extends Component {
             <button class="btn btn-nomal">검색</button>
         </div>
 
-        <div>
+        <div class="btn-box">
             <button class="btn btn-nomal"> Appontment Histoy ▼ </button>
             <button class="btn btn-primary"> + Add Patients </button>
         </div>

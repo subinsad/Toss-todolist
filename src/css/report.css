@@ -53,4 +53,16 @@
 }
 .report .report-contents .add:hover {
   opacity: 1;
+}
+
+@media all and (max-width: 767px) {
+  .report .report-contents {
+    white-space: nowrap;
+    overflow-x: scroll;
+  }
+  .report .report-contents__item-box {
+    width: 50%;
+    border-radius: 16px;
+    padding: 12px 44px;
+  }
 }/*# sourceMappingURL=report.css.map */
