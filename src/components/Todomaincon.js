@@ -28,6 +28,7 @@ export default class TodoMaincon extends Component {
             // 버튼 클릭 시 투두 입력
             addTodoButton.addEventListener('click', () => {
                 const newTodoTitle = inputEl.value;
+                inputEl.value = ''; // 초기화
                 if (newTodoTitle.trim() !== '') {
                     this.addTodo(newTodoTitle);
                     this.refreshTodos();
@@ -70,12 +71,16 @@ export default class TodoMaincon extends Component {
         const todoItem = document.createElement('li');
         const checkbox = document.createElement('input');
         const todoContent = document.createElement('span');
+
         const editBtn = document.createElement('button');
         const editInput = document.createElement('input');
         const deleteBtn = document.createElement('button'); // 삭제
         const updatedTime = document.createElement('span'); // 수정 시간
 
         todoContent.textContent = todo.title;
+
+        const selectBtn = document.createElement('button');
+        selectBtn.innerText = '선택 삭제';
 
         // 체크박스
         checkbox.type = 'checkbox';
@@ -87,12 +92,6 @@ export default class TodoMaincon extends Component {
             '<span class="material-symbols-outlined">delete</span>';
         editInput.type = 'text';
         editInput.style.display = 'none'; // 처음에는 숨겨놓기
-
-        //체크박스
-        checkbox.addEventListener('change', async () => {
-            await this.updateTodo(todo.id, { done: checkbox.checked });
-            await this.refreshTodos();
-        });
 
         // 삭제버튼
         deleteBtn.addEventListener('click', async () => {
@@ -134,6 +133,22 @@ export default class TodoMaincon extends Component {
         editInput.addEventListener('blur', async () => {
             editInput.style.display = 'none';
             todoContent.style.display = 'inline-block';
+        });
+
+        // 전체삭제 버튼
+        const deleteAllBtn = document.createElement('button');
+        deleteAllBtn.innerText = '전체 삭제';
+        deleteAllBtn.addEventListener('click', async () => {
+            const selectedTodos = this.getSelectedTodos();
+            await this.deleteAllTodos(selectedTodos);
+            await this.refreshTodos();
+        });
+
+        // 선택 삭제 버튼
+        selectBtn.addEventListener('click', async () => {
+            const selectTodos = this.getSelectedTodos();
+            await this.deleteAllTodos(selectTodos);
+            await this.refreshTodos();
         });
 
         // 엘리먼트를 todoItems에 추가
@@ -223,5 +238,17 @@ export default class TodoMaincon extends Component {
                 );
             }
         } catch (error) {}
+    }
+
+    //전체삭제
+    async deleteAllTodos(todos) {
+        try {
+            await Promise.all(
+                todos.map(async (todo) => await this.deleteTodo(todo.id))
+            );
+        } catch (error) {
+            console.log(error);
+            throw error;
+        }
     }
 }

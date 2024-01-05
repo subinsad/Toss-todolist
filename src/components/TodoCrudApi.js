@@ -56,15 +56,16 @@ export default class TodoCrudApi {
             );
 
             if (!response.ok) {
-                const errorText = await response.text(); // 에러 응답 내용을 가져옵니다.
+                const errorText = await response.text();
                 throw new Error(
                     `Failed to delete todo ${todoId}. Server response: ${response.status} - ${errorText}`
                 );
             }
-            console.log(`todo with id ${todoId} deleted`);
+
+            console.log(`Todo with id ${todoId} deleted`);
         } catch (error) {
-            console.log('error:', error);
-            throw error; // 에러를 호출한 쪽으로 전파합니다.
+            console.error('Error deleting todo:', error);
+            throw error;
         }
     }
 
