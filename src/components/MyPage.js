@@ -3,10 +3,12 @@ import Profile from './profile';
 import Calendar from './Calendar';
 
 export default class MyPage extends Component {
-    constructor() {
+    constructor(app) {
         super({
             tagName: 'section',
+            state: {},
         });
+        this.app = app;
     }
     render() {
         const profile = new Profile(); // 프로필
@@ -22,5 +24,6 @@ export default class MyPage extends Component {
         </div>
 
         `;
+        return this.el;
     }
 }

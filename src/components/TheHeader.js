@@ -1,7 +1,9 @@
+// TheHeader.js
+
 import { Component } from '../core/heropy';
 
 export default class TheHeader extends Component {
-    constructor() {
+    constructor(app) {
         super({
             tagName: 'header',
             state: {
@@ -9,21 +11,22 @@ export default class TheHeader extends Component {
                     {
                         name: 'Home',
                         href: '#/',
-                        icon: 'home', // Google Material Icons home icon
+                        icon: 'home',
                     },
                     {
                         name: 'Todo',
                         href: '#/projects',
-                        icon: 'list_alt', // Google Material Icons list_alt icon
+                        icon: 'list_alt',
                     },
                     {
                         name: 'About',
                         href: '#/about',
-                        icon: 'info', // Google Material Icons info icon
+                        icon: 'info',
                     },
                 ],
             },
         });
+        this.app = app;
         window.addEventListener('popstate', () => {
             this.render();
         });
@@ -43,9 +46,9 @@ export default class TheHeader extends Component {
                         const isActive = href === hash;
                         const iconClass = menu.icon
                             ? `<i class="material-symbols-outlined">${menu.icon}</i>`
-                            : ''; // Icon class
+                            : '';
                         return /* html */ `
-                        <li> 
+                        <li class="menu-link"> 
                             <a class="${isActive ? 'active' : ''}" href="${
                             menu.href
                         }"> 
@@ -58,5 +61,19 @@ export default class TheHeader extends Component {
             </ul>
         </nav>
         `;
+
+        const menuLinks = this.el.querySelectorAll('.menu-link a');
+        menuLinks.forEach((link) => {
+            link.addEventListener('click', (event) =>
+                this.handleMenuClick(event)
+            );
+        });
+
+        return this.el;
+    }
+
+    handleMenuClick(event) {
+        const href = event.currentTarget.getAttribute('href'); // 여기 수정
+        this.app.navigateTo(href);
     }
 }
