@@ -31,8 +31,8 @@ export default class App extends Component {
 
     navigateTo(href) {
         // 페이지 이동 로직 추가
-        window.location.hash = href;
-        window.location.reload();
+        window.location.hash = href; // 경로를 hash로 변경
+        window.location.reload(); // 새로고침 추가
     }
 }
 

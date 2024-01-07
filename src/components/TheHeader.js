@@ -73,7 +73,7 @@ export default class TheHeader extends Component {
     }
 
     handleMenuClick(event) {
-        const href = event.currentTarget.getAttribute('href'); // 여기 수정
+        const href = event.currentTarget.getAttribute('href'); //
         this.app.navigateTo(href);
     }
 }
