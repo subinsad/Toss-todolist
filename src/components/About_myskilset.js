@@ -10,7 +10,7 @@ export default class MySkillset extends Component {
 
     render() {
         this.el.innerHTML = /* html */ `
-        <div class="MySkilset">
+        <div class="MySkilset" id="skeleton">
             <div class="title"> 
                 <h3> My Skillset </h3>
                 <span class="material-symbols-outlined">settings</span>
@@ -46,49 +46,68 @@ export default class MySkillset extends Component {
         `;
 
         document.addEventListener('DOMContentLoaded', () => {
-            new Chart(document.getElementById('pie-chart'), {
-                type: 'doughnut',
-                data: {
-                    labels: [
-                        'HTML',
-                        'CSS',
-                        'SCSS',
-                        'Javascript',
-                        'VUE.JS',
-                        'REACT',
-                    ],
-                    datasets: [
-                        {
-                            label: 'Used',
-                            backgroundColor: [
-                                '#E34F26',
-                                '#1572B6',
-                                '#CC6699',
-                                '#F7DF1E',
-                                '#4FC08D',
-                                '#61DAFB',
-                            ],
-                            data: [700, 600, 500, 400, 300, 100],
-                        },
-                    ],
-                },
-                options: {
-                    plugins: {
-                        legend: {
-                            display: false,
-                            position: 'right',
-                            labels: {
-                                pointStyle: 'circle',
-                                fontSize: 12,
-                            },
+            this.showSkeleton();
+
+            setTimeout(() => {
+                this.hideSkeleton();
+                this.renderChart();
+            }, 2000);
+        });
+    }
+
+    showSkeleton() {
+        const skeletonItem = document.querySelector('#skeleton');
+        skeletonItem.classList.add('loading');
+    }
+
+    hideSkeleton() {
+        const skeletonItem = document.querySelector('#skeleton');
+        skeletonItem.classList.remove('loading');
+    }
+
+    renderChart() {
+        new Chart(document.getElementById('pie-chart'), {
+            type: 'doughnut',
+            data: {
+                labels: [
+                    'HTML',
+                    'CSS',
+                    'SCSS',
+                    'Javascript',
+                    'VUE.JS',
+                    'REACT',
+                ],
+                datasets: [
+                    {
+                        label: 'Used',
+                        backgroundColor: [
+                            '#E34F26',
+                            '#1572B6',
+                            '#CC6699',
+                            '#F7DF1E',
+                            '#4FC08D',
+                            '#61DAFB',
+                        ],
+                        data: [700, 600, 500, 400, 300, 100],
+                    },
+                ],
+            },
+            options: {
+                plugins: {
+                    legend: {
+                        display: false,
+                        position: 'right',
+                        labels: {
+                            pointStyle: 'circle',
+                            fontSize: 12,
                         },
                     },
-                    title: {
-                        display: true,
-                        text: 'Most Used Languages',
-                    },
                 },
-            });
+                title: {
+                    display: true,
+                    text: 'Most Used Languages',
+                },
+            },
         });
     }
 }

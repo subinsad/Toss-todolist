@@ -189,4 +189,49 @@
     width: 12px;
     height: 12px;
   }
+}
+.MySkilset {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  background-color: #e5e5e5;
+}
+.MySkilset .chart-box {
+  display: block;
+}
+
+.MySkilset.loading::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: linear-gradient(120deg, #e5e5e5 30%, #f0f0f0 38%, #f0f0f0 40%, #e5e5e5 48%);
+  transform: translateX(-100%);
+  animation: skeleton-loader 2s infinite;
+}
+
+.MySkilset.loading .title {
+  display: none;
+}
+.MySkilset.loading .chart-box {
+  display: none;
+}
+
+@keyframes skeleton-loader {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+@keyframes loader {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }/*# sourceMappingURL=About_skil.css.map */
