@@ -12,19 +12,16 @@ export default class TodoMaincon extends Component {
                         <button class="btn btn-normal add-todo">추가</button>                
                     </div>
                     <ul id="todoItems"></ul>
-
-                    <!-- 로딩애니메이션 -->
-                    <div class="the-loader">
-                        <div class="droplet_spinner">
-                            <div class="droplet"></div>
-                            <div class="droplet"></div>
-                            <div class="droplet"></div>
-                        </div>
-                    </div>
                 </div>
             </div>
 
-            
+            <div class="the-loader">
+                <div class="droplet_spinner">
+                    <div class="droplet"></div>
+                    <div class="droplet"></div>
+                    <div class="droplet"></div>
+                </div>
+            </div>
         `;
 
         document.addEventListener('DOMContentLoaded', async () => {
