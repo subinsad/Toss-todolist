@@ -1,6 +1,6 @@
 import { Component } from '../core/heropy';
-import Header from '../components/About_myprofile';
-import About_Skil from '../components/About_skil.js';
+import Header from '../components/AboutMyprofile';
+import About_Skil from '../components/AboutSkil.js';
 
 export default class About extends Component {
     render() {
