@@ -5,7 +5,7 @@ export default class Header extends Component {
         this.el.classList.add('AboutContainer');
         this.el.innerHTML = /* html */ `
             <div class="profileImg"> 
-                <img src="src/img/profile-small.jpg" class="profile" alt="profile" width="140" height="auto">
+                <img src="/src/img/profile-small.jpg" class="profile" alt="profile" width="140" height="auto">
             </div>
 
             <div class="text-box"> 
@@ -20,14 +20,14 @@ export default class Header extends Component {
             <div class="link">
                 <div class="border">
                     <a  class="link__text" href="https://github.com/subinsad">
-                        <img src="src/img/github-mark-white.png" class="profile" alt="profile" width="30" height="auto">
+                        <img src="/src/img/github-mark-white.png" class="profile" alt="profile" width="30" height="auto">
                         <b>github</b>
                     </a>
                 </div>
 
                 <div>
                     <a class="link__text" href="https://velog.io/@subinsad/posts">
-                        <img src="src/img/velog_icon.png" class="profile" alt="profile" width="30" height="auto">
+                        <img src="/src/img/velog_icon.png" class="profile" alt="profile" width="30" height="auto">
                         <b>blog</b>
                     </a>
                 </div>
