@@ -50,6 +50,17 @@
 
 ![REC-20240108234314-ezgif com-video-to-gif-converter](https://github.com/subinsad/Toss-todolist/assets/92204014/7bac8c22-7f81-4ce7-84ee-78eba06dc170)
 
+- 랜덤함수
+
+![REC-20240109000004-ezgif com-video-to-gif-converter](https://github.com/subinsad/Toss-todolist/assets/92204014/823a413b-3c04-4b9a-bb0f-1ef12f18adad)
+
+- 반응형
+
+  
+![REC-20240109000332-ezgif com-video-to-gif-converter](https://github.com/subinsad/Toss-todolist/assets/92204014/44fa4b77-503c-4338-85ea-03442e32ac30)
+
+  
+
 
 *************************
 ## 에러핸들링
