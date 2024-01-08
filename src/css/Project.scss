@@ -156,3 +156,24 @@
         }
     }
 }
+
+@media all and (max-width: $breackpoint-mobile) {
+    .Project {
+        height: 90vh;
+        box-sizing: border-box;
+        .list {
+            overflow-x: scroll;
+            display: flex;
+            padding: 40px;
+            box-sizing: border-box;
+
+            .items-container {
+                grid-template-columns: repeat(6, 1fr);
+            }
+
+            .item {
+                width: 250px;
+            }
+        }
+    }
+}

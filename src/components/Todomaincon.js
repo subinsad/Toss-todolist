@@ -110,9 +110,11 @@ export default class TodoMaincon extends Component {
         const todoItem = document.createElement('li');
         const checkbox = document.createElement('input');
         const todoContent = document.createElement('span');
+        todoContent.className = 'todoText';
 
         const editBtn = document.createElement('button');
         const editInput = document.createElement('input');
+        editInput.className = 'editBtn';
         const deleteBtn = document.createElement('button'); // 삭제
         const updatedTime = document.createElement('span'); // 수정 시간
 
@@ -127,8 +129,10 @@ export default class TodoMaincon extends Component {
 
         editBtn.innerHTML =
             '<span class="material-symbols-outlined">edit</span>';
+        editBtn.className = 'btn btn-nomal';
         deleteBtn.innerHTML =
             '<span class="material-symbols-outlined">delete</span>';
+        deleteBtn.className = 'btn btn-nomal';
         editInput.type = 'text';
         editInput.style.display = 'none'; // 처음에는 숨겨놓기
 

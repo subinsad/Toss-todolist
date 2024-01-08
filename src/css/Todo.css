@@ -12,10 +12,27 @@
 .Todolist .contents ul {
   display: flex;
   flex-direction: column;
+  align-items: flex-end;
   gap: 12px;
   padding: 16px;
   box-sizing: border-box;
   border-radius: 12px;
+}
+.Todolist .contents ul li {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  gap: 12px;
+  font-size: 20px;
+}
+.Todolist .contents ul li .todoText {
+  width: 100%;
+}
+.Todolist .contents ul li .editBtn {
+  width: 100%;
+  height: 30px;
+  font-size: 20px;
 }
 
 .the-loader {

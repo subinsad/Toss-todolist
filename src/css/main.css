@@ -64,7 +64,7 @@ router-view {
 }
 
 .btn-primary:hover {
-  background-color: #f86a05;
+  background-color: #cb6ab9;
   color: #fff;
 }
 
@@ -115,6 +115,11 @@ header nav ul li {
   padding: 4px;
   opacity: 0.3;
 }
+header nav ul li a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 header nav ul li:hover {
   border-radius: 8px;
   background-color: #202c4d;
@@ -127,6 +132,10 @@ header nav ul li:hover {
     display: flex;
     flex-direction: column;
   }
+  .btn {
+    height: 34px;
+    padding: 0 12px;
+  }
   .wrap {
     width: 100%;
     margin: 0;
@@ -135,6 +144,22 @@ header nav ul li:hover {
   .wrap header {
     display: flex;
     flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+  }
+  .wrap header .logo {
+    margin: 20px 0;
+  }
+  .wrap nav {
+    width: auto;
+  }
+  .wrap nav ul {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+  }
+  .wrap nav ul li {
+    margin-bottom: 0;
   }
   router-view {
     width: 100%;

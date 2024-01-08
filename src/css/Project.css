@@ -118,4 +118,23 @@
   border-radius: 50px;
   font-size: 12px;
   font-weight: 600;
+}
+
+@media all and (max-width: 767px) {
+  .Project {
+    height: 90vh;
+    box-sizing: border-box;
+  }
+  .Project .list {
+    overflow-x: scroll;
+    display: flex;
+    padding: 40px;
+    box-sizing: border-box;
+  }
+  .Project .list .items-container {
+    grid-template-columns: repeat(6, 1fr);
+  }
+  .Project .list .item {
+    width: 250px;
+  }
 }/*# sourceMappingURL=Project.css.map */

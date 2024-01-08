@@ -53,6 +53,7 @@ export default class TheHeader extends Component {
                             menu.href
                         }"> 
                                 ${iconClass}
+                                ${menu.name}
                             </a>
                         </li>
                         `;
