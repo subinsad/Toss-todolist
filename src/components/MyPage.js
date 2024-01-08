@@ -1,5 +1,5 @@
 import { Component } from '../core/heropy';
-import Profile from './profile';
+import Profile from './Profile';
 import Calendar from './Calendar';
 
 export default class MyPage extends Component {
