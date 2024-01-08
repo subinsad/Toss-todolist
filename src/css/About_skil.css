@@ -190,13 +190,13 @@
     height: 12px;
   }
 }
-.MySkilset {
+.MySkilset.loading {
   position: relative;
   overflow: hidden;
   border-radius: 10px;
   background-color: #e5e5e5;
 }
-.MySkilset .chart-box {
+.MySkilset.loading .chart-box {
   display: block;
 }
 
