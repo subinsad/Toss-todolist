@@ -1,6 +1,6 @@
 import { Component } from '../core/heropy';
-import PortFolio from './About_portfolio';
-import MySkilset from './About_myskilset';
+import PortFolio from './About_Portfolio';
+import MySkilset from './About_Myskilset';
 
 export default class Skil extends Component {
     render() {
