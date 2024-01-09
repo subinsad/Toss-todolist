@@ -103,7 +103,12 @@ import PortFolio from './AboutPortfolio';
 ```
 파일이름과 import할때 파일이름 대소문자 구분을 해야 배포오류가 안나온다.
 
-- 배포 후 이미지 깨짐 (해결중)
+- 배포 후 이미지 깨짐
+
+  ![image](https://github.com/subinsad/Toss-todolist/assets/92204014/5405dd4d-7ee0-471a-887f-8a81d678cb9c)
+정적이미지로 /public 폴더에서 관리하면 프로젝트 빌드할 때 빌드결과인 /dist폴더로 복사해서 사용
+복사된 /dist/img 폴더는 /img/이미지.확장자 형태로 접근
+
 
 
 ## 아쉬운 점
