@@ -1,7 +1,7 @@
 # 📌 TOSS의 할 일(Todo) 관리 페이지
+배포 링크 : https://toss-todolist.vercel.app/#/
 
-주어진 API를 활용해 '[완성 예시](https://todo-vite-vue3-composition-ts.vercel.app/)' 처럼 자유롭게 기업의 할 일 관리(Todo) 기능을 구현해보세요!  
-과제 수행 및 리뷰 기간은 별도 공지를 참고하세요!
+기간 : 2023-12-22 ~ 2024-01-08
 
 ### ❗ 필수
 
@@ -25,270 +25,90 @@
 -   [x] 차별화가 가능하도록 프로젝트를 최대한 예쁘게 만들어보세요.
 -   [x] 할 일과 관련된 기타 기능도 고려해보세요.
 
-## API 사용법
 
-요청 주소(Endpoint)
+## 구현사항
 
-```curl
-https://asia-northeast3-heropy-api.cloudfunctions.net/api/todos
-```
+- 할일 추가, 수정, 삭제 
 
-모든 API 요청(Request)은, 다음 사용 예시와 같이 `headers` 정보가 꼭 포함돼야 합니다!
-`username`은 `KDTX_ParkYoungWoong`와 같이 본명을 포함하고 파스칼 케이스로 작성해야 합니다!
-확인할 수 없는 사용자의 DB 정보는 임의로 삭제될 수 있습니다!
+  
+![REC-20240108233233-ezgif com-webp-to-gif-converter](https://github.com/subinsad/Toss-todolist/assets/92204014/033775e1-4073-44a8-8b54-46ad02ff03fe)
 
-API 사용 예시:
+- 캘린더
 
+  
+![image](https://github.com/subinsad/Toss-todolist/assets/92204014/24ffee3f-480e-4f76-852c-1942152e2cc2)
+
+
+
+- 차트js / 스켈레톤
+
+![REC-20240108234014-ezgif com-video-to-gif-converter](https://github.com/subinsad/Toss-todolist/assets/92204014/a8ae5a3b-ae27-4e4f-bd7b-6c7bc6f1ab13)
+
+
+
+- 로딩 애니메이션
+
+
+![REC-20240108234314-ezgif com-video-to-gif-converter](https://github.com/subinsad/Toss-todolist/assets/92204014/7bac8c22-7f81-4ce7-84ee-78eba06dc170)
+
+- 랜덤함수
+
+![REC-20240109000004-ezgif com-video-to-gif-converter](https://github.com/subinsad/Toss-todolist/assets/92204014/823a413b-3c04-4b9a-bb0f-1ef12f18adad)
+
+- 반응형
+
+  
+![REC-20240109000332-ezgif com-video-to-gif-converter](https://github.com/subinsad/Toss-todolist/assets/92204014/44fa4b77-503c-4338-85ea-03442e32ac30)
+
+  
+
+
+
+## 에러핸들링
+
+
+-  버튼을 누르고 새로고침을 해야 투두리스트가 나오는 이슈
 ```js
-async function createTodo() {
-    const res = await fetch(
-        'https://asia-northeast3-heropy-api.cloudfunctions.net/api/todos',
-        {
-            method: 'POST',
-            headers: {
-                'content-type': 'application/json',
-                apikey: 'KDT7_GrZ1eYBo', // KDT 7기 APIKEY 입니다!
-                username: 'KDT7_ParkYoungWoong',
-            },
-            body: JSON.stringify({
-                title: '아침 먹기!',
-            }),
-        }
-    );
-    const json = await res.json();
-    console.log(json);
+constructor() {
+        super();
+        this.state = {}; // 상태 초기화
 
-    return json;
-}
-```
-
-### 목록 조회
-
-전체 할 일 목록을 조회합니다.
-
-```curl
-curl https://asia-northeast3-heropy-api.cloudfunctions.net/api/todos
-  \ -X 'GET'
-```
-
-요청 데이터 타입 및 예시:
-
--   없음
-
-응답 데이터 타입 및 예시:
-
-```ts
-type ResponseValue = Todo[]; // 할 일 목록
-
-interface Todo {
-    id: string; // 할 일 ID
-    order: number; // 할 일 순서
-    title: string; // 할 일 제목
-    done: boolean; // 할 일 완료 여부
-    createdAt: string; // 할 일 생성일
-    updatedAt: string; // 할 일 수정일
-}
-```
-
-```json
-[
-    {
-        "id": "mnIwaAPIAE1ayQmqekiR",
-        "order": 0,
-        "title": "JS 공부하기",
-        "done": false,
-        "createdAt": "2021-10-28T05:18:51.868Z",
-        "updatedAt": "2021-10-28T05:18:51.868Z"
-    },
-    {
-        "id": "tMzPImGoWtRdJ6yyVv2y",
-        "order": 1,
-        "title": "과제 PullRequest(PR) 생성",
-        "done": true,
-        "createdAt": "2021-10-28T04:16:53.980Z",
-        "updatedAt": "2021-10-28T09:40:17.955Z"
-    },
-    {
-        "id": "Rq8BebKihCgteHHhMIRS",
-        "order": 2,
-        "title": "API 스터디",
-        "done": false,
-        "createdAt": "2021-10-28T04:17:02.510Z",
-        "updatedAt": "2021-10-28T04:17:02.510Z"
+        this.renderComponent(); // 화면 그리기
     }
-]
+```
+상위 컴포넌트에서 컴포넌트 업데이트 로직과 페이지 이동 로직 추가를 하니 해결
+```
+update() {
+        // 컴포넌트 업데이트
+        this.renderComponent();
+    }
+
+    navigateTo(href) {
+        // 페이지 이동 로직 추가
+        window.location.hash = href; // 경로를 hash로 변경
+        window.location.reload(); // 새로고침 추가
+    }
 ```
 
-### 항목 추가
-
-할 일 항목을 새롭게 추가합니다.
-
-```curl
-curl https://asia-northeast3-heropy-api.cloudfunctions.net/api/todos
-  \ -X 'POST'
+- 컴포넌트 div 렌더링 에러
 ```
-
-요청 데이터 타입 및 예시:
-
-```ts
-interface RequestBody {
-    title: string; // 할 일 제목 (필수!)
-    order?: number; // 할 일 순서
-}
+this.el.classList.add('classname');
 ```
+컴포넌트 안에 컴포넌트를 연결시켜 div가 생성되는걸 확인 후 생성되는 div를 this로 넣어주니 해결
 
-```json
-{
-    "title": "KDT 과정 설계 미팅",
-    "order": 2
-}
+
+- 배포 오류
 ```
-
-응답 데이터 타입 및 예시:
-
-```ts
-interface ResponseValue {
-    id: string;
-    order: number;
-    title: string;
-    done: boolean;
-    createdAt: string;
-    updatedAt: string;
-}
+import PortFolio from './AboutPortfolio';
 ```
+파일이름과 import할때 파일이름 대소문자 구분을 해야 배포오류가 안나온다.
 
-```json
-{
-    "id": "7P8dOM4voAv8a8cfoeKZ",
-    "order": 0,
-    "title": "KDT 과정 설계 미팅",
-    "done": false,
-    "createdAt": "2021-10-29T07:20:02.749Z",
-    "updatedAt": "2021-10-29T07:20:02.749Z"
-}
-```
+- 배포 후 이미지 깨짐 (해결중)
 
-### 항목 수정
 
-특정 할 일 항목을 수정합니다.
+## 아쉬운 점
+- API를 처음 사용해보았는데, 파일구조를 깔끔하게 못한점이 아쉽고, 다른 기능들을 구현해보려 했지만 오류가 많이 나와 추가, 삭제, 수정만 구현 한 점이 아쉽다.
+- 반응형 디자인을 많이 고려하지 못해 모바일화면이 깔끔한 UI는 아닌거 같아 아쉽다.
 
-```curl
-curl https://asia-northeast3-heropy-api.cloudfunctions.net/api/todos/:todoId
-  \ -X 'PUT'
-```
 
-요청 데이터 타입 및 예시:
-
-```ts
-interface RequestBody {
-    title: string; // 할 일 제목 (필수!)
-    done: boolean; // 할 일 완료 여부 (필수!)
-    order?: number; // 할 일 순서
-}
-```
-
-```json
-{
-    "title": "Bootstrap 스타일 추가",
-    "done": false,
-    "order": 2
-}
-```
-
-응답 데이터 타입 및 예시:
-
-```json
-{
-    "id": "7P8dOM4voAv8a8cfoeKZ",
-    "title": "Bootstrap 스타일 추가",
-    "done": false,
-    "order": 2,
-    "createdAt": "2021-10-29T07:20:02.749Z",
-    "updatedAt": "2021-10-29T07:20:02.749Z"
-}
-```
-
-### 항목 삭제
-
-특정 할 일 항목을 삭제합니다.
-
-```curl
-curl https://asia-northeast3-heropy-api.cloudfunctions.net/api/todos/:todoId
-  \ -X 'DELETE'
-```
-
-요청 데이터 타입 및 예시:
-
--   없음
-
-응답 데이터 타입 및 예시:
-
-```ts
-type ResponseValue = true;
-```
-
-### 항목 일괄 삭제
-
-```curl
-curl https://asia-northeast3-heropy-api.cloudfunctions.net/api/todos/deletions
-  \ -X 'DELETE'
-```
-
-요청 데이터 타입 및 예시:
-
-```ts
-interface RequestBody {
-    todoIds: string[]; // 삭제할 할 일 ID 목록 (필수!)
-}
-```
-
-```json
-{
-    "todoIds": [
-        "mnIwaAPIAE1ayQmqekiR",
-        "tMzPImGoWtRdJ6yyVv2y",
-        "GHrvr3LaPx1g7y2sNuaC",
-        "Rq8BebKihCgteHHhMIRS"
-    ]
-}
-```
-
-응답 데이터 타입 및 예시:
-
-```ts
-type ResponseValue = true;
-```
-
-### 목록 순서 변경
-
-할 일 목록의 순서를 변경합니다.
-
-```curl
-curl https://asia-northeast3-heropy-api.cloudfunctions.net/api/todos/reorder
-  \ -X 'PUT'
-```
-
-요청 데이터 타입 및 예시:
-
-```ts
-interface RequestBody {
-    todoIds: string[]; // 새롭게 정렬할 할 일 ID 목록 (필수!)
-}
-```
-
-```json
-{
-    "todoIds": [
-        "mnIwaAPIAE1ayQmqekiR",
-        "tMzPImGoWtRdJ6yyVv2y",
-        "GHrvr3LaPx1g7y2sNuaC",
-        "Rq8BebKihCgteHHhMIRS"
-    ]
-}
-```
-
-응답 데이터 타입 및 예시:
-
-```ts
-type ResponseValue = true; // 순서 변경 여부
-```
+  
