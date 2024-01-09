@@ -20,14 +20,14 @@ export default class Header extends Component {
             <div class="link">
                 <div class="border">
                     <a  class="link__text" href="https://github.com/subinsad">
-                        <img src="%PUBLIC_URL%/../img/github-mark-white.png" class="profile" alt="profile" width="30" height="auto">
+                        <img src="../img/github-mark-white.png" class="profile" alt="profile" width="30" height="auto">
                         <b>github</b>
                     </a>
                 </div>
 
                 <div>
                     <a class="link__text" href="https://velog.io/@subinsad/posts">
-                        <img src="%PUBLIC_URL%/../img/velog_icon.png" class="profile" alt="profile" width="30" height="auto">
+                        <img src="../img/velog_icon.png" class="profile" alt="profile" width="30" height="auto">
                         <b>blog</b>
                     </a>
                 </div>
