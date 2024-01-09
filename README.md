@@ -3,6 +3,8 @@
 
 기간 : 2023-12-22 ~ 2024-01-08
 
+기술 스택 : <img alt="Html" src ="https://img.shields.io/badge/HTML5-E34F26.svg?&style=for-the-badge&logo=HTML5&logoColor=white"/> <img alt="Css" src ="https://img.shields.io/badge/CSS3-1572B6.svg?&style=for-the-badge&logo=CSS3&logoColor=white"/> <img alt="JavaScript" src ="https://img.shields.io/badge/JavaScriipt-F7DF1E.svg?&style=for-the-badge&logo=JavaScript&logoColor=black"/> 
+
 ### ❗ 필수
 
 -   [x] 원하는 특정 기업을 하나 선정하거나 새로운 가상의 기업을 만드세요!
