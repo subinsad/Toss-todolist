@@ -5,7 +5,7 @@ export default class Header extends Component {
         this.el.classList.add('AboutContainer');
         this.el.innerHTML = /* html */ `
             <div class="profileImg"> 
-                <img src="%PUBLIC_URL%/../img/profile-small.jpg" class="profile" alt="profile" width="140" height="auto">
+                <img src="https://github.com/subinsad/Toss-todolist/blob/main/src/img/profile-small.jpg" class="profile" alt="profile" width="140" height="auto">
             </div>
 
             <div class="text-box"> 
