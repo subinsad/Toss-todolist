@@ -35,7 +35,7 @@ export default class TheHeader extends Component {
     render() {
         this.el.innerHTML = /* html */ `
         <a href="#/" class="logo">
-            <img src="%PUBLIC_URL%/../img/logo.png" alt="Toss Logo" width="50" height="auto">
+            <img src="/../img/logo.png" alt="Toss Logo" width="50" height="auto">
         </a>
         <nav>
             <ul>
