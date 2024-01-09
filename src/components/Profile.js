@@ -19,7 +19,7 @@ export default class MyPage extends Component {
                 <span class="name"> subin </span>
                 <span class="email"> subin_1118@naver.com </span>
             </div>
-            <img src="%PUBLIC_URL%/../img/profile-small.jpg" class="profile" alt="profile" width="60" height="auto">
+            <img src="%PUBLIC_URL%../img/profile-small.jpg" class="profile" alt="profile" width="60" height="auto">
             <span class="dot"></span>
         </div>
 
