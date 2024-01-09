@@ -39,7 +39,7 @@ export default class PortFolio extends Component {
                     </li>
 
                     <li>
-                    <img src="/src/img/nespresso.avif" class="profile" alt="profile" width="40" height="auto">
+                    <img src="../img/nespresso.avif" class="profile" alt="profile" width="40" height="auto">
                         <div> 
                             <p> senier project </p>
                             <a href="#"> Deeply </a>
