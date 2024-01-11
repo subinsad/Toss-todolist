@@ -3,6 +3,8 @@
 
 기간 : 2023-12-22 ~ 2024-01-08
 
+기술 스택 : <img alt="Html" src ="https://img.shields.io/badge/HTML5-E34F26.svg?&style=for-the-badge&logo=HTML5&logoColor=white"/> <img alt="Css" src ="https://img.shields.io/badge/CSS3-1572B6.svg?&style=for-the-badge&logo=CSS3&logoColor=white"/> <img alt="JavaScript" src ="https://img.shields.io/badge/JavaScriipt-F7DF1E.svg?&style=for-the-badge&logo=JavaScript&logoColor=black"/> 
+
 ### ❗ 필수
 
 -   [x] 원하는 특정 기업을 하나 선정하거나 새로운 가상의 기업을 만드세요!
@@ -103,7 +105,12 @@ import PortFolio from './AboutPortfolio';
 ```
 파일이름과 import할때 파일이름 대소문자 구분을 해야 배포오류가 안나온다.
 
-- 배포 후 이미지 깨짐 (해결중)
+- 배포 후 이미지 깨짐
+
+  ![image](https://github.com/subinsad/Toss-todolist/assets/92204014/5405dd4d-7ee0-471a-887f-8a81d678cb9c)
+정적이미지로 /public 폴더에서 관리하면 프로젝트 빌드할 때 빌드결과인 /dist폴더로 복사해서 사용
+복사된 /dist/img 폴더는 /img/이미지.확장자 형태로 접근
+
 
 
 ## 아쉬운 점
