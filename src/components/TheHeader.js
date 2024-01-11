@@ -9,12 +9,12 @@ export default class TheHeader extends Component {
             state: {
                 menus: [
                     {
-                        name: 'Home',
+                        name: 'Todo',
                         href: '#/',
                         icon: 'home',
                     },
                     {
-                        name: 'Todo',
+                        name: 'Projects',
                         href: '#/projects',
                         icon: 'list_alt',
                     },
