@@ -138,14 +138,17 @@ export default class TodoMaincon extends Component {
 
         // 삭제버튼
         deleteBtn.addEventListener('click', async () => {
-            await this.deleteTodo(todo.id);
-            await this.refreshTodos();
+            const confirmDelete = window.confirm('정말 삭제하시겠습니까?');
+            if (confirmDelete) {
+                await this.deleteTodo(todo.id);
+                await this.refreshTodos();
+            }
         });
 
         // 수정버튼
         editBtn.addEventListener('click', () => {
             todoContent.style.display = 'none';
-            deleteBtn.style.display = 'none';
+            editBtn.style.display = 'none';
             editInput.style.display = 'inline-block';
             editInput.value = todo.title;
             editInput.focus(); // 수정 input에 포커스 주기
